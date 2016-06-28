@@ -1,0 +1,25 @@
+.head
+  %link{rel:"stylesheet"}
+
+
+.body
+  .h1
+    Apply Here!
+  .container
+    %p
+      Description of what it means to be an instructor. Please fill out the form below.
+
+    %form{:name => 'Application', :method => 'post', :enctype => 'text/plain', :action => '/create'}
+      Name
+      %input{ :type => 'text', :name => 'Name'}
+      Email
+      %input{ :type => 'text', :name => 'Email'}
+      Your Story
+      %input{ :type => 'text', :name => 'Your Story'}
+      Activities
+      %input{ :type => 'text', :name => 'Activities'}
+      Social Media Accounts
+      %input{ :type => 'text', :name => 'Social Media Accounts'}
+      %input{ :type => 'submit', :name => 'Submit!'}
+
+  

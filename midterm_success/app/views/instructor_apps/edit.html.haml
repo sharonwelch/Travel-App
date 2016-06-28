@@ -1,0 +1,41 @@
+  = form_tag("/instructor_apps", method: "post") do
+    = label_tag(:first_name, "First Name")
+    = text_field_tag(:first_name)
+    %br
+    = label_tag(:last_name, "Last Name")
+    = text_field_tag(:last_name)
+    %br
+    = label_tag(:email, "Email")
+    = text_field_tag(:email)
+    %br
+    = label_tag(:phone_number, "Phone Number")
+    = text_field_tag(:phone_number)
+    %br
+    = label_tag(:instagram_handle, "Instagram Handle")
+    = text_field_tag(:instagram_handle)
+    %br
+    = label_tag(:blog_url, "Blog URL")
+    = text_field_tag(:blog_url)
+    %br
+    = label_tag(:facebook_url, "Facebook URL")
+    = text_field_tag(:facebook_url)
+    %br
+    = label_tag(:new_haven, "What's your favorite thing about New Haven and why?")
+    %br
+    = text_area_tag(:new_haven)
+    %br
+    = label_tag(:hobbies, "What are your hobbies and how did you find them?")
+    %br
+    = text_area_tag(:hobbies)
+    %br
+    = label_tag(:activity_title, "Activity Title")
+    = text_field_tag(:activity_title)
+    %br
+    = label_tag(:activity_description, "Describe your activity")
+    %br
+    = text_area_tag(:activity_description)
+    %br
+    = submit_tag("Submit")
+
+
+= link_to "Delete this entry", application_form_path(@application_form.id), method: 'delete'

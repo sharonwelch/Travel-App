@@ -1,0 +1,2 @@
+module InstructorAppsHelper
+end

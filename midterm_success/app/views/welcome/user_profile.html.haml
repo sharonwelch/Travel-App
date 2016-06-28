@@ -1,0 +1,59 @@
+.head
+  %link{rel:"stylesheet"}
+
+.body
+  .h1
+    Make Your Account!
+  .container
+    %p
+      Submit some information about yourself so that we can help match you with activities.
+
+      %form{:name => 'User Account', :method => 'post', :enctype => 'text/plain', :action => '/create'}
+        Name
+        %input{ :type => 'text', :name => 'Name'}
+        Email
+        %input{ :type => 'text', :name => 'Email'}
+        %p
+          Interests/Hobbies:
+        %p
+
+          %input{ :type => 'checkbox', :name => 'interest_1'}
+          Exercise
+        %p
+
+          %input{ :type => 'checkbox', :name => 'interest_2'}
+          Knitting
+
+        %p
+
+          %input{ :type => 'checkbox', :name => 'interest_3'}
+          Baking
+        %p
+
+          %input{ :type => 'checkbox', :name => 'interest_4'}
+          Sandwiches
+        %p
+
+          %input{ :type => 'checkbox', :name => 'interest_5'}
+          Hiking
+        %p
+
+          %input{ :type => 'checkbox', :name => 'interest_6'}
+          Photography
+        %p
+          %input{ :type => 'checkbox', :name => 'interest_7'}
+          Art
+        %p
+          %input{ :type => 'checkbox', :name => 'interest_8'}
+          Bars
+        %p
+          %input{ :type => 'checkbox', :name => 'interest_9'}
+          Animals
+        %p
+          %input{ :type => 'checkbox', :name => 'interest_10'}
+          Biking
+        %p
+          %input{ :type => 'checkbox', :name => 'interest_11'}
+          Music
+        %p
+          %input{ :type => 'submit', :name => 'Submit!'}

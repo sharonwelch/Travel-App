@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'workflow'
 gem 'pry'
 gem 'sql'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

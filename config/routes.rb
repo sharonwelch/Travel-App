@@ -1,22 +1,107 @@
 Rails.application.routes.draw do
-  devise_for :controllers => {
-    registrations: 'registrations'
-  }
+  get 'applications/index'
 
+  get 'applications/create'
+
+  get 'applications/new'
+
+  get 'applications/edit'
+
+  get 'applications/show'
+
+  get 'applications/update'
+
+  get 'applications/destroy'
+
+  get 'through_ats/index'
+
+  get 'through_ats/create'
+
+  get 'through_ats/new'
+
+  get 'through_ats/edit'
+
+  get 'through_ats/show'
+
+  get 'through_ats/update'
+
+  get 'through_ats/destroy'
+
+  get 'tags/index'
+
+  get 'tags/create'
+
+  get 'tags/new'
+
+  get 'tags/edit'
+
+  get 'tags/show'
+
+  get 'tags/update'
+
+  get 'tags/destroy'
+
+  get 'reviews/index'
+
+  get 'reviews/create'
+
+  get 'reviews/new'
+
+  get 'reviews/edit'
+
+  get 'reviews/show'
+
+  get 'reviews/update'
+
+  get 'reviews/destroy'
+
+  get 'activities/index'
+
+  get 'activities/create'
+
+  get 'activities/new'
+
+  get 'activities/edit'
+
+  get 'activities/show'
+
+  get 'activities/update'
+
+  get 'activities/destroy'
+
+  get 'instructors/index'
+
+  get 'instructors/create'
+
+  get 'instructors/new'
+
+  get 'instructors/edit'
+
+  get 'instructors/show'
+
+  get 'instructors/update'
+
+  get 'instructors/destroy'
+
+  devise_for :controllers => {registrations: 'registrations'}
   devise_for :users
 
+  resources :instructors
+  resources :activities
+  resources :reviews
+  resources :tags
+  resources :through_ats
+  resources :applications
+  
   root 'welcome#index'
   # @instructor_intro = InstructorApp.all
   # @instructor_intro.each do |a|
   #   get '/instructor_profile/#{a}', to: 'welcome#instructor_profile'
   # end
-  get '/instructor_profile/:id', to: 'instructor_apps#activity'
-  get '/instructor_apps/new', to: 'instructor_apps#new'
-  get '/stories', to: 'welcome#stories'
-  get '/user_profile', to: 'welcome#user_profile'
-
-  resources :instructor_apps
-  resources :activities
+  # get '/instructor_profile/:id', to: 'instructor_apps#activity'
+  # get '/instructor_apps/new', to: 'instructor_apps#new'
+  # get '/stories', to: 'welcome#stories'
+  # get '/user_profile', to: 'welcome#user_profile'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   # @instructor_intro.each do |a|
   #   get '/instructor_profile/#{a}', to: 'welcome#instructor_profile'
   # end
-  # get '/instructor_profile/:id', to: 'instructor_apps#activity'
-  # get '/instructor_apps/new', to: 'instructor_apps#new'
-  # get '/stories', to: 'welcome#stories'
-  # get '/user_profile', to: 'welcome#user_profile'
+  get '/instructor_profile/:id', to: 'instructor_apps#activity'
+  get '/instructor_apps/new', to: 'instructor_apps#new'
+  get '/stories', to: 'welcome#stories'
+  get '/user_profile', to: 'welcome#user_profile'
 
   resources :instructor_apps
   resources :activities

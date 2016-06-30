@@ -14,8 +14,15 @@ class ApplicationsController < ApplicationController
     @app.instagram_handle = app_hash['instagram_handle']
     @app.blog_url = app_hash['blog_url']
     @app.facebook_url = app_hash['facebook_url']
-    @app.new_haven = app_hash['new_haven']
-    @app.hobbies = app_hash['hobbies']
+    @app.other_social_media = app_hash['other_social_media']
+    @app.love_about_hometown = app_hash['love_about_hometown']
+    @app.who_are = app_hash['who_are']
+    @app.unique_thing = app_hash['unique_thing']
+    @app.activity_desc = app_hash['activity_desc']
+    @app.activity_title = app_hash['activity_title']
+    @app.why_share = app_hash['why_share']
+    @app.photos = app_hash['photos']
+
     @app.save!
 
     @activity = Activity.new
@@ -59,8 +66,14 @@ class ApplicationsController < ApplicationController
     @app.instagram_handle = app_hash['instagram_handle']
     @app.blog_url = app_hash['blog_url']
     @app.facebook_url = app_hash['facebook_url']
-    @app.new_haven = app_hash['new_haven']
-    @app.hobbies = app_hash['hobbies']
+    @app.other_social_media = app_hash['other_social_media']
+    @app.love_about_hometown = app_hash['love_about_hometown']
+    @app.who_are = app_hash['who_are']
+    @app.unique_thing = app_hash['unique_thing']
+    @app.activity_desc = app_hash['activity_desc']
+    @app.activity_title = app_hash['activity_title']
+    @app.why_share = app_hash['why_share']
+    @app.photos = app_hash['photos']
 
     if @app.save
       redirect_to new_user_session_path

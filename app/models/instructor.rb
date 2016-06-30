@@ -2,7 +2,7 @@ class Instructor < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :activities
-  has_one :application
+  has_one :instructor_app
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true

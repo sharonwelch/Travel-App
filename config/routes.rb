@@ -1,88 +1,4 @@
 Rails.application.routes.draw do
-  # get 'applications/index'
-  #
-  # get 'applications/create'
-  #
-  # get 'applications/new'
-  #
-  # get 'applications/edit'
-  #
-  # get 'applications/show'
-  #
-  # get 'applications/update'
-  #
-  # get 'applications/destroy'
-  #
-  # get 'through_ats/index'
-  #
-  # get 'through_ats/create'
-  #
-  # get 'through_ats/new'
-  #
-  # get 'through_ats/edit'
-  #
-  # get 'through_ats/show'
-  #
-  # get 'through_ats/update'
-  #
-  # get 'through_ats/destroy'
-  #
-  # get 'tags/index'
-  #
-  # get 'tags/create'
-  #
-  # get 'tags/new'
-  #
-  # get 'tags/edit'
-  #
-  # get 'tags/show'
-  #
-  # get 'tags/update'
-  #
-  # get 'tags/destroy'
-  #
-  # get 'reviews/index'
-  #
-  # get 'reviews/create'
-  #
-  # get 'reviews/new'
-  #
-  # get 'reviews/edit'
-  #
-  # get 'reviews/show'
-  #
-  # get 'reviews/update'
-  #
-  # get 'reviews/destroy'
-  #
-  # get 'activities/index'
-  #
-  # get 'activities/create'
-  #
-  # get 'activities/new'
-  #
-  # get 'activities/edit'
-  #
-  # get 'activities/show'
-  #
-  # get 'activities/update'
-  #
-  # get 'activities/destroy'
-  #
-  # get 'instructors/index'
-  #
-  # get 'instructors/create'
-  #
-  # get 'instructors/new'
-  #
-  # get 'instructors/edit'
-  #
-  # get 'instructors/show'
-  #
-  # get 'instructors/update'
-  #
-  # get 'instructors/destroy'
-
   devise_for :controllers => {registrations: 'registrations'}
   devise_for :users
 
@@ -91,7 +7,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :tags
   resources :through_ats
-  resources :applications
+  resources :instructor_apps
 
   root 'welcome#index'
   get: '/applications/new', to: 'applications/new'

@@ -1,6 +1,6 @@
-class CreateApplications < ActiveRecord::Migration
+class CreateInstructorApps < ActiveRecord::Migration
   def change
-    create_table :applications do |t|
+    create_table :instructor_apps do |t|
       t.integer :instructor_id
       t.string :other_social_media
       t.text :love_about_hometown

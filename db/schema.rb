@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160628214131) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "applications", force: :cascade do |t|
+  create_table "instructor_apps", force: :cascade do |t|
     t.integer  "instructor_id"
     t.string   "other_social_media"
     t.text     "love_about_hometown"

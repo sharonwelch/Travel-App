@@ -22,15 +22,8 @@ class InstructorAppsController < ApplicationController
     @instructor_app.activity_title = app_hash['activity_title']
     @instructor_app.why_share = app_hash['why_share']
     @instructor_app.photos = app_hash['photos']
-    @instructor_app.save!
 
-    @activity = Activity.new
-    @activity.title = instructor_app_hash['activity_title']
-    @activity.description = instructor_app_hash['activity_description']
-    @activity.instructor_app = @instructor_app
-    # @activity.save
-
-    if @activity.save
+    if @instructor_app.save
       redirect_to new_user_registration_path
     else
       flash[:notice] = "Some fields are still blank"
@@ -41,7 +34,6 @@ class InstructorAppsController < ApplicationController
 
   def new
     @instructor_app = InstructorApp.new
-    @activity = Activity.new
   end
 
   def edit
@@ -73,7 +65,7 @@ class InstructorAppsController < ApplicationController
     @instructor_app.activity_title = app_hash['activity_title']
     @instructor_app.why_share = app_hash['why_share']
     @instructor_app.photos = app_hash['photos']
-    
+
 
     if @instructor_app.save
       redirect_to new_user_session_path
@@ -91,9 +83,10 @@ class InstructorAppsController < ApplicationController
     redirect_to instructor_apps_path
   end
 
-  def activity
-    id = params[:id]
-    @activity = Activity.find_by instructor_id: id
-    @instructor_app = InstructorApp.find(id)
-  end
+  # this is no longer relevant
+  # def activity
+  #   id = params[:id]
+  #   @activity = Activity.find_by instructor_id: id
+  #   @instructor_app = InstructorApp.find(id)
+  # end
 end

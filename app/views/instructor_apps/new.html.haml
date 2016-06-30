@@ -2,7 +2,7 @@
   Apply Here!
 
 .p
-  = form_tag("/instructor_apps", method: "post") do |i|
+  = form_tag("/instructor_app", method: "post") do |i|
     = label_tag(:first_name, "First Name")
     = text_field_tag(:first_name)
     %br
@@ -24,14 +24,38 @@
     = label_tag(:facebook_url, "Facebook URL")
     = text_field_tag(:facebook_url)
     %br
-    = label_tag(:new_haven, "What's your favorite thing about New Haven and why?")
+    = label_tag(:other_social_media, "Other social media (e.g. Twitter, Pinterest, LinkedIn, etc.)")
+    = text_field_tag(:other_social_media)
     %br
-    = text_area_tag(:new_haven)
+    = label_tag(:love_about_hometown, "What do you love about the place you live? Why?")
     %br
-    = label_tag(:hobbies, "What are your hobbies and how did you find them?")
+    = text_area_tag(:love_about_hometown)
     %br
-    = text_area_tag(:hobbies)
+    = label_tag(:who_are, "Tell us who you are and what excites you.")
     %br
+    = text_area_tag(:who_are)
+    %br
+    = label_tag(:unique_thing, "What do you think is the most unique thing about you?")
+    %br
+    = text_area_tag(:unique_thing)
+    %br
+    = label_tag(:activity_desc, "Describe your proposed activity and previous experience related to this activity.")
+    %br
+    = text_area_tag(:activity_desc)
+    %br
+    = label_tag(:activity_title, "Proposed activity title")
+    %br
+    = text_field_tag(:activity_title)
+    %br
+    = label_tag(:why_share, "Why do you want to share your activities with people?")
+    %br
+    = text_area_tag(:why_share) #this needs to be checkboxes
+    %br
+    = label_tag(:photos, "If you have them, please submit any of your photos related to this activity.")
+    %br
+    = text_area_tag(:photos)
+    %br
+    -# not sure what this is for
     = fields_for @activity do |a|
       = label_tag(:activity_title, "Activity Title")
       = text_field_tag(:activity_title)

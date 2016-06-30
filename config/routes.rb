@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :instructor_apps
 
   root 'welcome#index'
-  get: '/applications/new', to: 'applications/new'
   # @instructor_intro = InstructorApp.all
   # @instructor_intro.each do |a|
   #   get '/instructor_profile/#{a}', to: 'welcome#instructor_profile'

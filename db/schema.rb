@@ -23,22 +23,28 @@ ActiveRecord::Schema.define(version: 20160628214131) do
     t.string   "location"
     t.string   "photo"
     t.string   "price"
-    t.integer  "through_id"
     t.string   "duration"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   create_table "instructor_apps", force: :cascade do |t|
-    t.integer  "instructor_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "instagram_handle"
+    t.string   "blog_url"
+    t.string   "facebook_url"
     t.string   "other_social_media"
+    t.string   "picture"
+    t.string   "activities"
     t.text     "love_about_hometown"
     t.text     "who_are"
     t.text     "unique_thing"
     t.text     "activity_desc"
     t.string   "activity_title"
     t.string   "why_share"
-    t.string   "photos"
     t.string   "workflow_state"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
@@ -49,13 +55,11 @@ ActiveRecord::Schema.define(version: 20160628214131) do
     t.string   "last_name"
     t.string   "email"
     t.string   "phone_number"
-    t.string   "instagram_handle"
-    t.string   "blog_url"
-    t.string   "facebook_url"
-    t.string   "activities"
     t.string   "picture"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "instructor_apps_id"
+    t.text     "story"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -69,7 +73,6 @@ ActiveRecord::Schema.define(version: 20160628214131) do
 
   create_table "tags", force: :cascade do |t|
     t.string   "category"
-    t.integer  "through_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

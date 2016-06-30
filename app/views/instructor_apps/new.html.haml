@@ -2,7 +2,7 @@
   Apply Here!
 
 .p
-  = form_tag("/instructor_app", method: "post") do |i|
+  = form_tag("/instructor_apps", method: "post") do |i|
     = label_tag(:first_name, "First Name")
     = text_field_tag(:first_name)
     %br
@@ -51,17 +51,17 @@
     %br
     = text_area_tag(:why_share) #this needs to be checkboxes
     %br
-    = label_tag(:photos, "If you have them, please submit any of your photos related to this activity.")
+    = label_tag(:picture, "If you have them, please submit any of your photos related to this activity.")
     %br
-    = text_area_tag(:photos)
+    = text_area_tag(:picture)
     %br
     -# not sure what this is for
-    = fields_for @activity do |a|
-      = label_tag(:activity_title, "Activity Title")
-      = text_field_tag(:activity_title)
-      %br
-      = label_tag(:activity_description, "Describe your activity")
-      %br
-      = text_area_tag(:activity_description)
+    -# = fields_for @activity do |a|
+    -#   = label_tag(:activity_title, "Activity Title")
+    -#   = text_field_tag(:activity_title)
+    -#   %br
+    -#   = label_tag(:activity_description, "Describe your activity")
+    -#   %br
+    -#   = text_area_tag(:activity_description)
     %br
     = submit_tag("Submit")

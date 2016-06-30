@@ -7,6 +7,7 @@ class CreateInstructors < ActiveRecord::Migration
       t.string :phone_number
       t.string :picture
       t.integer :instructor_apps_id
+      t.text :story
 
       t.timestamps null: false
     end

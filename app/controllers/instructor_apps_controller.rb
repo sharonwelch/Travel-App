@@ -14,8 +14,14 @@ class InstructorAppsController < ApplicationController
     @instructor_app.instagram_handle = instructor_app_hash['instagram_handle']
     @instructor_app.blog_url = instructor_app_hash['blog_url']
     @instructor_app.facebook_url = instructor_app_hash['facebook_url']
-    @instructor_app.new_haven = instructor_app_hash['new_haven']
-    @instructor_app.hobbies = instructor_app_hash['hobbies']
+    @instructor_app.other_social_media = app_hash['other_social_media']
+    @instructor_app.love_about_hometown = app_hash['love_about_hometown']
+    @instructor_app.who_are = app_hash['who_are']
+    @instructor_app.unique_thing = app_hash['unique_thing']
+    @instructor_app.activity_desc = app_hash['activity_desc']
+    @instructor_app.activity_title = app_hash['activity_title']
+    @instructor_app.why_share = app_hash['why_share']
+    @instructor_app.photos = app_hash['photos']
     @instructor_app.save!
 
     @activity = Activity.new
@@ -59,8 +65,15 @@ class InstructorAppsController < ApplicationController
     @instructor_app.instagram_handle = instructor_app_hash['instagram_handle']
     @instructor_app.blog_url = instructor_app_hash['blog_url']
     @instructor_app.facebook_url = instructor_app_hash['facebook_url']
-    @instructor_app.new_haven = instructor_app_hash['new_haven']
-    @instructor_app.hobbies = instructor_app_hash['hobbies']
+    @instructor_app.other_social_media = app_hash['other_social_media']
+    @instructor_app.love_about_hometown = app_hash['love_about_hometown']
+    @instructor_app.who_are = app_hash['who_are']
+    @instructor_app.unique_thing = app_hash['unique_thing']
+    @instructor_app.activity_desc = app_hash['activity_desc']
+    @instructor_app.activity_title = app_hash['activity_title']
+    @instructor_app.why_share = app_hash['why_share']
+    @instructor_app.photos = app_hash['photos']
+    
 
     if @instructor_app.save
       redirect_to new_user_session_path

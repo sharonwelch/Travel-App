@@ -7,7 +7,6 @@ class CreateActivities < ActiveRecord::Migration
       t.string :location
       t.string :photo
       t.string :price
-      t.integer :through_id
       t.string :duration
 
       t.timestamps null: false

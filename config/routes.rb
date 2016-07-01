@@ -12,8 +12,16 @@ Rails.application.routes.draw do
   resources :instructor_apps
 
   root 'welcome#index'
-  get '/reviewapp', to: 'admin#index'
+  get '/reviewapp', to: 'admin#reviewindividualapp'
+  post '/reviewapp', to: 'admin#reviewindividualapp'
   post '/instructor_app' => "instructor_apps#create"
+  get '/acceptedapps', to: 'admin#accept'
+  get '/rejectedapps', to: 'admin#reject'
+  get '/reviewapps', to: 'admin#reviewapps'
+  get '/noapps', to: 'admin#noapps'
+
+
+
   # @instructor_intro = InstructorApp.all
   # @instructor_intro.each do |a|
   #   get '/instructor_profile/#{a}', to: 'welcome#instructor_profile'

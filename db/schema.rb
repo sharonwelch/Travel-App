@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628214131) do
+ActiveRecord::Schema.define(version: 20160701134204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,8 +46,12 @@ ActiveRecord::Schema.define(version: 20160628214131) do
     t.string   "activity_title"
     t.string   "why_share"
     t.string   "workflow_state"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "app_photo_file_name"
+    t.string   "app_photo_content_type"
+    t.integer  "app_photo_file_size"
+    t.datetime "app_photo_updated_at"
   end
 
   create_table "instructors", force: :cascade do |t|

@@ -12,10 +12,14 @@ Rails.application.routes.draw do
   resources :instructor_apps
 
   root 'welcome#index'
-  get '/reviewapp', to: 'admin#index'
+  get '/reviewapp', to: 'admin#reviewindividualapp'
+  post '/reviewapp', to: 'admin#reviewindividualapp'
   post '/instructor_app' => "instructor_apps#create"
-  post '/acceptedapps', to: 'admin#accepted'
-  post '/rejectedapps', to: 'admin#rejected'
+  get '/acceptedapps', to: 'admin#accept'
+  get '/rejectedapps', to: 'admin#reject'
+  get '/reviewapps', to: 'admin#reviewapps'
+  get '/noapps', to: 'admin#noapps'
+
 
 
   # @instructor_intro = InstructorApp.all

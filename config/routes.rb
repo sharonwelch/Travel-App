@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/reviewapp', to: 'admin#index'
+  post '/acceptedapps', to: 'admin#accepted'
+  post '/rejectedapps', to: 'admin#rejected'
+
+
   # @instructor_intro = InstructorApp.all
   # @instructor_intro.each do |a|
   #   get '/instructor_profile/#{a}', to: 'welcome#instructor_profile'

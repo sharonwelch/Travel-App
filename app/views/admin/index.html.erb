@@ -1,0 +1,30 @@
+<h1>Admin#index</h1>
+<p>Find me in app/views/admin/index.html.erb</p>
+
+<% @number_of_apps = 0 %>
+
+<% @newapps.each do |app| %>
+  <%= @number_of_apps += 1 %>. <br/>
+  <%= app.first_name %>
+  <%= app.last_name %>
+  <br/>
+  <%= app.email %>
+<br/>
+  <%= app.instagram_handle %>
+  <br/>
+  <%= app.blog_url %> <br/>
+  <%= app.facebook_url %> <br/>
+  <%= app.other_social_media %> <br/>
+  <%= app.love_about_hometown %> <br/>
+  <%= app.who_are %> <br/>
+  <%= app.unique_thing %> <br/>
+  <%= app.activity_title %> <br/>
+  <%= app.activity_desc %> <br/>
+  <%= app.why_share %> <br/>
+  <%= app.picture %>
+  <br/>
+  <input value="Accept" type="submit"></input>
+  <input value="Reject" type="submit"></inpute>
+  <br/>
+  <br/>
+<%end%>

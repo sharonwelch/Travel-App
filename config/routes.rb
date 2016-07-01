@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
   devise_for :controllers => {registrations: 'registrations'}
   devise_for :users
 
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   resources :instructor_apps
 
   root 'welcome#index'
+  get '/reviewapp', to: 'admin#index'
   # @instructor_intro = InstructorApp.all
   # @instructor_intro.each do |a|
   #   get '/instructor_profile/#{a}', to: 'welcome#instructor_profile'

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/reviewapp', to: 'admin#index'
+  post '/instructor_app' => "instructor_apps#create"
+
   post '/acceptedapps', to: 'admin#accepted'
   post '/rejectedapps', to: 'admin#rejected'
 

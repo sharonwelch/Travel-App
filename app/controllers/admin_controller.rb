@@ -13,3 +13,4 @@ class AdminController < ApplicationController
     @rejectedapps = InstructorApp.where(workflow_state: :rejected)
   end
 end
+

@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   get '/rejectedapps', to: 'admin#reject'
   get '/reviewapps', to: 'admin#reviewapps'
   get '/noapps', to: 'admin#noapps'
-  
-  get '/individualinstructor/:id', to: 'instructors#individualinstructor'
 
+  get '/individualinstructor/:id', to: 'instructors#individualinstructor'
+  get '/filter/:category', to: 'instructors#filter'
 
 
   # @instructor_intro = InstructorApp.all

@@ -24,6 +24,12 @@ class InstructorsController < ApplicationController
     @instructor = InstructorApp.where(id: id).first
   end
 
+  def filter
+    @category = params[:category]
+    @tag_id = Tag.where(category: @category).pluck(:id)
+    @activity_id = ThroughAt.where(tag_id: @tag_id).pluck(:activity_id)
+    @activities = Activity.where(id: @activity_id)
+  end
 
   def update
   end

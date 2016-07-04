@@ -5,6 +5,19 @@ Add link to activities page or filter here!
 
 <br/>
 <br/>
+<div class="btn-group">
+   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Filter by Activity Type:
+     <span class="caret"></span>
+   </button>
+   <ul class="dropdown-menu">
+    <li><a href="/filter/cooking">Cooking</a></li>
+    <li><a href="/filter/active">Active</a></li>
+    <li><a href="/filter/art">Art</a></li>
+    <li><a href="/filter/music">Music</a></li>
+  </ul>
+</div>
+
 <div class = "container">
   <% n = 0 %>
   <% @allinstructors.each do |instructor| %>

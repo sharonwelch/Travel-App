@@ -1,2 +1,19 @@
 <h1>Instructors#index</h1>
 <p>Find me in app/views/instructors/index.html.erb</p>
+
+Add link to activities page or filter here!
+
+<br/>
+<br/>
+<div class = "container">
+  <% n = 0 %>
+  <% @allinstructors.each do |instructor| %>
+    <%= link_to "#{instructor.first_name.capitalize} #{instructor.last_name.capitalize}", "/individualinstructor/#{instructor.id}" %>
+    <br/>
+    <%= instructor.activity_title.titleize %>
+    <br/>
+    <br/>
+    <% n += 1 %>
+  <% end %>
+
+</div>

@@ -13,7 +13,6 @@ class AdminController < ApplicationController
       @app.workflow_state = "being_reviewed"
       @app.save!
     end
-
   end
 
   def submit

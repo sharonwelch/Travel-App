@@ -1,27 +1,26 @@
 <h1>Admin#index</h1>
 <p>Find me in app/views/admin/index.html.erb</p>
 
-<% app = InstructorApp.where(id: @id).first %>
-  <%= app.first_name %>
-  <%= app.last_name %>
+  <%= @app.first_name %>
+  <%= @app.last_name %>
   <br/>
-  <%= app.email %>
-<br/>
-  <%= app.instagram_handle %>
+  <%= @app.email %>
   <br/>
-  <%= app.blog_url %> <br/>
-  <%= app.facebook_url %> <br/>
-  <%= app.other_social_media %> <br/>
-  <%= app.love_about_hometown %> <br/>
-  <%= app.who_are %> <br/>
-  <%= app.unique_thing %> <br/>
-  <%= app.activity_title %> <br/>
-  <%= app.activity_desc %> <br/>
-  <%= app.why_share %> <br/>
-  <%= app.picture %>
+  <%= @app.instagram_handle %>
   <br/>
-  <%= link_to "/acceptedapps", acceptedapps_path, :value => "Accept", :class => "button" %>
-  <%= link_to "/rejectedapps", rejectedapps_path, :value => "Reject", :class => "button" %>
+  <%= @app.blog_url %> <br/>
+  <%= @app.facebook_url %> <br/>
+  <%= @app.other_social_media %> <br/>
+  <%= @app.love_about_hometown %> <br/>
+  <%= @app.who_are %> <br/>
+  <%= @app.unique_thing %> <br/>
+  <%= @app.activity_title %> <br/>
+  <%= @app.activity_desc %> <br/>
+  <%= @app.why_share %> <br/>
+  <%= @app.picture %>
+  <br/>
+  <%= link_to "Accept this application", acceptedapps_path, :value => "Accept", :class => "btn btn-primary" %>
+  <%= link_to "Reject this application", rejectedapps_path, :value => "Reject", :class => "btn btn-primary" %>
 
     <br/>
   <br/>

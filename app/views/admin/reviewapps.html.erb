@@ -1,9 +1,10 @@
 <% @number_of_apps = 0 %>
 
 <% @newapps.each do |app| %>
+  <br/>
   <%= @number_of_apps += 1 %>. <br/>
   <%= app.first_name %>
   <%= app.last_name %>
-  <%= link_to "/reviewapp", reviewapp_path, :value => "Review Application" %>
-
+  <%= link_to "Review Application", "/reviewapp/#{app.id}", :value => "Review Application", :class => "btn btn-primary"%>
+</br>
 <%end%>

@@ -4,20 +4,24 @@ class AdminController < ApplicationController
   end
 
   def reviewindividualapp
-    @id = InstructorApp.where(workflow_state: :new).pluck(:id).uniq
+    @id = params[:id]
+    # @id = InstructorApp.where(workflow_state: :new).pluck(:id).uniq
     if @id.length == 0
       redirect_to noapps_path
     else
       @app = InstructorApp.where(id: @id).first
-
+      # @app = InstructorApp.where(id: @id)
       @app.workflow_state = "being_reviewed"
       @app.save!
     end
-
   end
 
   def submit
     @app = InstructorApp.where(id: @id).first
+  end
+
+  def being_reviewed
+    @apps_under_review = InstructorApp.where(workflow_state: :being_reviewed)
   end
 
   def accept
@@ -41,7 +45,6 @@ class AdminController < ApplicationController
       redirect_to noapps_path
     else
       @app = InstructorApp.where(id: @id).first
-
       @app.workflow_state = "rejected"
       @app.save!
 

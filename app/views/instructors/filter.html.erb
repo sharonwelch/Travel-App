@@ -1,0 +1,9 @@
+<h1>sorted activities</h1>
+<br>
+<% @activities.each do |activity| %>
+<%= activity.title %>
+<br>
+<%= link_to "Read More", "/individualinstructor/#{activity.instructor_id}" %>
+<br>
+<br>
+<% end %>

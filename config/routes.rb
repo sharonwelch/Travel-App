@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/noapps', to: 'admin#noapps'
   get 'apps_under_review', to: 'admin#being_reviewed'
   get '/individualinstructor/:id', to: 'instructors#individualinstructor'
+  get '/filter/:category', to: 'instructors#filter'
 
 
 

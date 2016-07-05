@@ -1,5 +1,5 @@
 $(function() {
     $('#fullpage').fullpage({
-      anchors:['firstPage', 'secondPage', 'thirdPage']
+      sectionsColor: ['#76DB9F', '#4BBFC3', 'whitesmoke'],
     });
 });

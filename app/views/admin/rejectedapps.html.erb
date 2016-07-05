@@ -1,1 +1,10 @@
-hello!
+Here are the rejected applications:
+<br>
+<% @rejectedapps.each do |app| %>
+  <%= app.first_name %>
+  <%= app.last_name %>
+  <br>
+  <%= app.email %>
+  <br>
+  <br>
+<% end %>

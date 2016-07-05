@@ -1,6 +1,10 @@
 Here are the apps currently awaiting review:
+<br>
 <% @apps_under_review.each do |app| %>
   <%= app.first_name %>
   <%= app.last_name %>
-  <%= link_to "Review this Application", '/reviewapp/#{app.id}', :class => 'btn btn-primary'%>
+  <br>
+  <%= link_to "Review this Application", "/reviewapp/#{app.id}", :class => 'btn btn-primary'%>
+  <br>
+  <br>
 <% end %>

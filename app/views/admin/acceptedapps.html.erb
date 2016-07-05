@@ -1,1 +1,10 @@
-hello!
+Here are the accepted applications:
+<br>
+<% @acceptedapps.each do |app| %>
+  <%= app.first_name %>
+  <%= app.last_name %>
+  <br>
+<%= link_to "Go to their page", "/individualinstructor/#{app.id}" %>
+<br>
+<br>
+<% end %>

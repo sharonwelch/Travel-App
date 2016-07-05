@@ -15,13 +15,15 @@ Rails.application.routes.draw do
   get '/reviewapp/:id', to: 'admin#reviewindividualapp'
   post '/reviewapp/:id', to: 'admin#reviewindividualapp'
   post '/instructor_app' => "instructor_apps#create"
-  get '/acceptedapps', to: 'admin#accept'
-  get '/rejectedapps', to: 'admin#reject'
+  get '/accept', to: 'admin#accept'
+  get '/reject', to: 'admin#reject'
   get '/reviewapps', to: 'admin#reviewapps'
   get '/noapps', to: 'admin#noapps'
   get 'apps_under_review', to: 'admin#being_reviewed'
   get '/individualinstructor/:id', to: 'instructors#individualinstructor'
   get '/filter/:category', to: 'instructors#filter'
+  get '/acceptedapps', to: 'admin#acceptedapps'
+  get '/rejectedapps', to: 'admin#rejectedapps'
 
 
 

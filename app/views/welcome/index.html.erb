@@ -1,0 +1,45 @@
+<div id="fullpage">
+  <div class="section">
+    <%= @greeting %>
+    <%= @mission_statement %>
+  </div>
+  <div class="section">
+    <%= @browse_locals %>
+  </div>
+  <div class="section">
+    <a href="/instructor_apps/new">
+      Application
+    </a>
+    <a href="/stories">
+      Stories
+    </a>
+    <a href="/users/sign_up">
+      Sign Up
+    </a>
+    <%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE' %>
+  </div>
+
+</div>
+
+<!-- -# .head
+-#   -# %link{rel:"stylesheet"}
+-#   %link{rel:"stylesheet", type:"text/css", href:"jquery.fullPage.css"}
+-#   -# <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-#
+-# #fullpage
+-#   .section
+-#     = @greeting
+-#     = @mission_statement
+-#   .section
+-#     = @browse_locals
+-#
+-# .body
+-#
+-#
+-#   %a{href: "/instructor_apps/new"}
+-#     Application
+-#   %a{href: "/stories"}
+-#     Stories
+-#   %a{href: "/users/sign_up"}
+-#     Sign Up
+-#   = link_to 'Sign Out', destroy_user_session_path, method: 'DELETE' -->

@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
    @greeting = "WELCOME"
    @mission_statement = "We are a group of spontaneous, intelligent women who want you to
    experience the world."
+   @browse_locals = "Browse our locals"
  end
 
 

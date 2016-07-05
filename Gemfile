@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-turbolinks'
 gem 'workflow'
 gem 'pry'
 gem 'sql'

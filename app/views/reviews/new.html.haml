@@ -1,0 +1,19 @@
+.h1
+  Review an activity
+.p
+  = form_tag("/reviews", method: "post") do |i|
+    = label_tag(:first_name, "First Name")
+    = text_field_tag(:first_name)
+    %br
+    = label_tag(:last_name, "Last Name")
+    = text_field_tag(:last_name)
+    %br
+    = label_tag(:rating, "Rating (1-5)")
+    = text_field_tag(:rating)
+    %br
+    = hidden_field_tag :activity_id, @activity_id
+    = label_tag(:content, "Your Review:")
+    %br
+    = text_area_tag(:content)
+    %br
+    = submit_tag("Submit")

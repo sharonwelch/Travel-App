@@ -21,10 +21,11 @@ Rails.application.routes.draw do
   get '/noapps', to: 'admin#noapps'
   get 'apps_under_review', to: 'admin#being_reviewed'
   get '/individualinstructor/:id', to: 'instructors#individualinstructor'
+  # post '/individualinstructor/:id', to: 'instructors#individualinstructor'
   get '/filter/:category', to: 'instructors#filter'
   get '/acceptedapps', to: 'admin#acceptedapps'
   get '/rejectedapps', to: 'admin#rejectedapps'
-
+  get '/activity/:activity_id/review/new', to: 'reviews#new'
 
 
   # @instructor_intro = InstructorApp.all

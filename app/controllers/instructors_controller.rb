@@ -19,16 +19,17 @@ class InstructorsController < ApplicationController
   end
 
   def individualinstructor
-    # binding.pry
     id = params[:id]
     @instructor = InstructorApp.where(id: id).first
+    @activity_id = Activity.where(instructor_id: id).last.id
+    @reviews = Review.where(activity_id: @activity_id)
   end
 
   def filter
     @category = params[:category]
     @tag_id = Tag.where(category: @category).pluck(:id)
-    @activity_id = ThroughAt.where(tag_id: @tag_id).pluck(:activity_id)
-    @activities = Activity.where(id: @activity_id)
+    @act_id = ThroughAt.where(tag_id: @tag_id).pluck(:activity_id)
+    @activities = Activity.where(id: @act_id)
   end
 
 

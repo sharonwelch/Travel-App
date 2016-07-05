@@ -1,4 +1,4 @@
-<h1>sorted activities</h1>
+<h1>activities sorted by <%= @category %></h1>
 <br>
 <% @activities.each do |activity| %>
 <%= activity.title %>
@@ -7,3 +7,6 @@
 <br>
 <br>
 <% end %>
+<br>
+<br>
+<%= link_to "Back to Instructors", "/instructors" %>

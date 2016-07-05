@@ -14,6 +14,7 @@ class WelcomeController < ApplicationController
  def stories
  end
 
- def user_profile
- end
+ # def user_reviews
+ #   @activities_to_review = Activity.not_reviewed
+ # end
 end

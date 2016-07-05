@@ -19,7 +19,16 @@ Activity!
 <%= @instructor.activity_desc %>
 <br>
 <br>
-reviewS!!!!
+reviews!!!!
 <br>
+<% @reviews.each do |review|%>
+  <%= review.rating %> stars by <%= review.first_name %> <%= review.last_name %>
+  <br>
+  <%= review.content %>
+  <br>
+  <br>
+<% end %>
+<br>
+<%= link_to "Review #{@instructor.activity_title.titleize}", "/activity/#{@activity_id}/review/new", :class => "btn btn-primary" %>
 <br>
 <a href = "/instructors">Back to all instructors</a>

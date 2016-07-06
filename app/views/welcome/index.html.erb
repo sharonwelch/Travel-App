@@ -1,38 +1,46 @@
-<!-- <link rel="stylesheets"> -->
 
+<!DOCTYPE html>
+<!-- <link rel="stylesheets"> -->
+<!--
 <div id="header">
   <a href= "/users/sign_in">
     Log in
   </a>
-</div>
+</div> -->
 
-<div id="fullpage">
-  <div class="section intro-section">
-    <p class="greeting">
-    <%= @greeting %>
-    </p>
-    <br>
-    <%= @mission_statement %>
-  </div>
-  <div class="section stories-section">
-    <%= @browse_locals %>
-    <br>
-    <a class="btn btn-primary" href="/instructors" role="button">
-        Discover Activities
-    </a>
-  </div>
+<%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE' %>
+<body>
+  <div id="fullpage">
+    <div class="section intro">
+      <p class="greeting">
+      <%= @greeting %>
+      </p>
+      <br>
+      <%= @mission_statement %>
+    </div>
+    <div class="section stories">
+      <%= @browse_locals %>
+      <br>
+      <a type= "button" class="btn btn-primary-outline" href="/instructors" role="button">
+          Discover Activities
+      </a>
+    </div>
 
-  <div class="section apply-section">
-    <a href="/instructor_apps/new">
-      Application
-    </a>
-    <a href="/users/sign_up">
-      Sign Up
-    </a>
-    <%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE' %>
+    <div class="section apply">
+      Apply as a local
+      <br>
+      <a href="/instructor_apps/new">
+        Application
+      </a>
+      <br>
+      Sign up as a traveller
+      <br>
+      <a href="/users/sign_up">
+        Sign Up
+      </a>
+    </div>
   </div>
-
-</div>
+</body>
 
 <!-- -# .head
 -#   -# %link{rel:"stylesheet"}

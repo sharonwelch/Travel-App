@@ -1,5 +1,24 @@
-<h1>Admin#index</h1>
-<p>Find me in app/views/admin/index.html.erb</p>
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Quirk</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/reviewapps">New Applications</a></li>
+        <li><a href="/apps_under_review">Applications Under Review</a></li>
+        <li><a href="/acceptedapps">Accepted Applications</a></li>
+        <li><a href="/rejectedapps">Rejected Applications</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
   <%= @app.first_name %>
   <%= @app.last_name %>

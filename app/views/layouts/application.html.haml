@@ -13,5 +13,5 @@
 -# %a{href: "/"}
 -#   Homepage
 -#   %br
-
+= link_to("Home", root_path) unless current_page?(root_url)
 = yield

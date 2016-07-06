@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-cooking = Activity.create(title: "cooking", description: "cooking with ellis", instructor_id: 2)
 cooking = Tag.create(category: "cooking")
-at = ThroughAt.create(activity_id: 1, tag_id: 1)
-review = Review.create(content: "I had so much fun cooking with Ellis!", activity_id: 1, rating: 5)
+active = Tag.create(category: "active")
+art = Tag.create(category: "art")
+music = Tag.create(category: "music")

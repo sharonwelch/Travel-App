@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get '/acceptedapps', to: 'admin#acceptedapps'
   get '/rejectedapps', to: 'admin#rejectedapps'
   get '/activity/:activity_id/review/new', to: 'reviews#new'
-
+  get '/:instructor_id/activity/new', to: 'activities#new'
 
   # @instructor_intro = InstructorApp.all
   # @instructor_intro.each do |a|

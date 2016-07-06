@@ -2,8 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-// DO I PUT ANYHTING HERE?
-.intro .stories .apply{
+.intro, .apply, .stories{
   text-align: center;
+  .intro {
+    font-family: calibri;
+    font-size: 20pt;
+    text-color: white;
+  }
+  p {
+    font-size: 38pt;
+  }
 }

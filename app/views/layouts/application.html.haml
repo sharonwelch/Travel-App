@@ -1,17 +1,17 @@
 %html
   %head
-    %title MidtermSuccess
+    %title TravelApp
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
+    -# belong on a page that doesn't have fullpage.js 
+    -# %p.notice= notice
+    -# %p.alert= alert
+    = yield
 
 -# %a{href: "/users/sign_in"}
 -#   Log in
 -# %a{href: "/"}
 -#   Homepage
 -#   %br
-
-= yield

@@ -1,20 +1,13 @@
 <!-- <link rel="stylesheets"> -->
-
-<div id="header">
-  <a href= "/users/sign_in">
-    Log in
-  </a>
-</div>
-
 <div id="fullpage">
-  <div class="section intro-section">
+  <div class="section intro">
     <p class="greeting">
     <%= @greeting %>
     </p>
     <br>
     <%= @mission_statement %>
   </div>
-  <div class="section stories-section">
+  <div class="section stories">
     <%= @browse_locals %>
     <br>
     <a class="btn btn-primary" href="/instructors" role="button">
@@ -22,7 +15,7 @@
     </a>
   </div>
 
-  <div class="section apply-section">
+  <div class="section apply">
     <a href="/instructor_apps/new">
       Application
     </a>

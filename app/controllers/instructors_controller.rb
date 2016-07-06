@@ -21,8 +21,13 @@ class InstructorsController < ApplicationController
   def individualinstructor
     id = params[:id]
     @instructor = InstructorApp.where(id: id).first
-    @activity_id = Activity.where(instructor_id: id).last.id
-    @reviews = Review.where(activity_id: @activity_id)
+    if Activity.where(instructor_id: id).length == 0
+      redirect_to instructors_path
+      flash[:notice] = "This instructor currently does not have any activities available."
+    else
+      @activity_id = Activity.where(instructor_id: id).last.id
+      @reviews = Review.where(activity_id: @activity_id)
+    end
   end
 
   def filter

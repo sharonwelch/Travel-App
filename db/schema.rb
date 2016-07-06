@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20160705162435) do
     t.string   "duration"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.boolean  "reviewed"
   end
 
   create_table "instructor_apps", force: :cascade do |t|

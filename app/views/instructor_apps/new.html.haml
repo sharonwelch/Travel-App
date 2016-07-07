@@ -49,14 +49,14 @@
     %br
     = label_tag(:why_share, "What motivates you to share your activity?")
     %br
-    = radio_button_tag(:motivation, "monetary")
-    = label_tag(:motivation_monetary, "Monetizing what I love to do")
+    = radio_button_tag(:why_share, "monetary")
+    = label_tag(:why_share_monetary, "Monetizing what I love to do")
     %br
-    = radio_button_tag(:motivation, "teaching")
-    = label_tag(:motivation_teaching, "Desire to pass along knowledge")
+    = radio_button_tag(:why_share, "teaching")
+    = label_tag(:why_share_teaching, "Desire to pass along knowledge")
     %br
-    = radio_button(:motivation, "people", :checked => (:motivation == "people"))
-    = label_tag(:motivation_people, "Opportunity to meet interesting people")
+    = radio_button_tag(:why_share, "people")
+    = label_tag(:why_share_people, "Opportunity to meet interesting people")
     %br
     = label_tag(:picture, "If you have them, please submit any of your photos related to this activity.")
     %br

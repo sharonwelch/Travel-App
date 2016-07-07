@@ -4,12 +4,60 @@
 
 .intro, .apply, .stories{
   text-align: center;
+  .sign_in {
+    text-align: right;
+    padding-right: 60px;
+  }
   .intro {
     font-family: calibri;
     font-size: 20pt;
     text-color: white;
   }
-  p {
-    font-size: 38pt;
+  .fp-tableCell {
+    padding-top: 35px;
+    padding-bottom: 230px;
+  }
+  h1 {
+    text-align: left;
+    padding-left: 60px;
+    font-size: 45pt;
+    padding-bottom: 150px;
+    margin-top: 0;
+  }
+  .greeting {
+    font-size: 42pt;
+  }
+  .mission_statement{
+    font-size: 20px;
+  }
+  .browse {
+    font-size: 30pt;
+  }
+  .apply, .sign_up {
+    font-size: 25pt;
+  }
+  .btn-block {
+    text-align: center;
+    width: 45%;
+    border-width: 4px;
+
+  }
+  .btn-lg {
+    margin-left: auto;
+    margin-right: auto;
+    border-color: white;
+    background-color: transparent;
+    font-size: x-large;
+  }
+  .btn-default {
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #76DB9F;
+    background-color: #76DB9F;
+    font-size: x-large;
+  }
+  .button {
+    text-size: 50pt;
+
   }
 }

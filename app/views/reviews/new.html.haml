@@ -1,6 +1,11 @@
-.h1
+%p.instructors_sign_in
+  = link_to "Home", root_path, class: "btn btn-primary"
+  = link_to "Log In", new_user_session_path, class: "btn btn-primary"
+
+%h1.review
   Review an activity
-.p
+
+%p
   = form_tag("/reviews", method: "post") do |i|
     = label_tag(:first_name, "First Name")
     = text_field_tag(:first_name)
@@ -16,4 +21,4 @@
     %br
     = text_area_tag(:content)
     %br
-    = submit_tag("Submit")
+    = submit_tag("Submit", :class => "btn btn-default btn-submit")

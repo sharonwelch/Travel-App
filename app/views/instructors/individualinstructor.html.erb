@@ -1,34 +1,49 @@
+<p class="instructors_sign_in">
+  <%= link_to "Home", root_path, class: "btn btn-primary" %>
+  <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+</p>
 
-<h1>
-<%= @instructor.first_name.capitalize %>
-<%= @instructor.last_name.capitalize %>
+<h1 class="instructorsh1">
+  Instructor: <br>
+  <p class = "instructor_name">
+    <%= @instructor.first_name.capitalize %>
+    <%= @instructor.last_name.capitalize %>
+  </p>
 </h1>
-<h2>
-My Story
-</h2>
-<br/>
-ADD ACTUAL STORY!!!
-<%= @instructor.who_are %>
-<br/>
-<h2>
-Activity!
-</h2>
-<br/>
-<%= @instructor.activity_title.titleize %>
-<br>
-<%= @instructor.activity_desc %>
-<br>
-<br>
-reviews!!!!
-<br>
-<% @reviews.each do |review|%>
-  <%= review.rating %> stars by <%= review.first_name %> <%= review.last_name %>
+
+<div class="instructor_info">
+  <h2>
+    My Story
+  </h2>
+
+  <p>
+    ADD ACTUAL STORY!!!
+    <%= @instructor.who_are %>
+  </p>
+
+  <h2>
+    <%= @instructor.activity_title.titleize %>
+  </h2>
+
+  <p>
+    <%= @instructor.activity_desc %>
+  </p>
+
+  <h2>
+    Reviews
+  </h2>
+
+  <% @reviews.each do |review|%>
+    <%= review.rating %> stars by <%= review.first_name %> <%= review.last_name %>
+    <br>
+    <%= review.content %>
+    <br>
+    <br>
+  <% end %>
   <br>
-  <%= review.content %>
+  <%= link_to "Review #{@instructor.activity_title.titleize}", "/activity/#{@activity_id}/review/new", :class => "btn btn-default" %>
   <br>
-  <br>
-<% end %>
-<br>
-<%= link_to "Review #{@instructor.activity_title.titleize}", "/activity/#{@activity_id}/review/new", :class => "btn btn-primary" %>
-<br>
-<a href = "/instructors">Back to all instructors</a>
+  <p class="back_to_instructors">
+    <%= link_to "Back to All Instructors", "/instructors", class: "btn btn-default" %>
+  </p>
+</div>

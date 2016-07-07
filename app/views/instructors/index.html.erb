@@ -1,9 +1,11 @@
-<h1>Instructors#index</h1>
-<p>Find me in app/views/instructors/index.html.erb</p>
+<p class="instructors_sign_in">
+  <%= link_to "Home", root_path, class: "btn btn-primary" %>
+  <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+</p>
 
-
-<br/>
-<br/>
+<h1 class="instructorsh1">Discover Activities</h1>
+<h2 class="instructorsh2">Learn about our instructors and their passions to experience the local lifestyle.</h2>
+<br>
 <div class="btn-group">
    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      Filter by Activity Type

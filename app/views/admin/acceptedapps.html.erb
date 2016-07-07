@@ -19,15 +19,16 @@
   </div>
 </nav>
 
-<h1>Here are the accepted applications:</h1>
+<h1 class="applications">Accepted Applications</h1>
 
 
-<br>
-<% @acceptedapps.each do |app| %>
-  <%= app.first_name %>
-  <%= app.last_name %>
+<div class = "container">
+  <% @acceptedapps.each do |app| %>
+    <%= app.first_name %>
+    <%= app.last_name %>
+    <br>
+  <%= link_to "Go to their page", "/individualinstructor/#{app.id}" %>
   <br>
-<%= link_to "Go to their page", "/individualinstructor/#{app.id}" %>
-<br>
-<br>
-<% end %>
+  <br>
+  <% end %>
+</div>

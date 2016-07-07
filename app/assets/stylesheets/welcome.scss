@@ -24,6 +24,13 @@
     padding-bottom: 150px;
     margin-top: 0;
   }
+  h2 {
+    text-align: left;
+    padding-left: 60px;
+    font-size: 45pt;
+    padding-bottom: 40px;
+    margin-top: 0;
+  }
   .greeting {
     font-size: 42pt;
   }
@@ -59,5 +66,12 @@
   .button {
     text-size: 50pt;
 
+  }
+
+  .btn-login {
+    border-width: 3px;
+    border-color:rgb(75, 191, 195);
+    color: rgb(75, 191, 195);
+    background-color: transparent;
   }
 }

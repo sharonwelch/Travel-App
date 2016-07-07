@@ -1,3 +1,35 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.instructors_sign_in {
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+
+.review {
+  padding-left: 50px;
+  background-color: #76DB9F;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+form {
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 40%;
+}
+
+.btn-submit {
+  margin-left: 80px;
+}
+
+textarea {
+  resize: none;
+  height: 250px;
+  width: 230px;
+}

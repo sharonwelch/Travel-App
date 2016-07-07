@@ -1,28 +1,58 @@
 <!-- <link rel="stylesheets"> -->
 <div id="fullpage">
   <div class="section intro">
+    <p class="sign_in">
+      <%= link_to "Log In", new_user_session_path %>
+    </p>
+    <h1>
+      <%= @name %>
+    </h1>
     <p class="greeting">
     <%= @greeting %>
     </p>
     <br>
+    <p class="mission_statement">
     <%= @mission_statement %>
+  </p>
   </div>
+
   <div class="section stories">
+    <p class="sign_in">
+      <%= link_to "Log In", new_user_session_path %>
+    </p>
+    <h1>
+      <%= @name %>
+    </h1>
+    <p class="browse">
     <%= @browse_locals %>
+  </p>
     <br>
-    <a class="btn btn-primary" href="/instructors" role="button">
+    <a class="btn btn-primary btn-lg btn-block" href="/instructors" role="button">
         Discover Activities
     </a>
   </div>
 
   <div class="section apply">
-    <a href="/instructor_apps/new">
+    <p class="sign_in">
+      <%= link_to "Log In", new_user_session_path %>
+    </p>
+    <h1>
+      <%= @name %>
+    </h1>
+    <p class="apply">
+      Apply as a Local
+    </p>
+    <br>
+    <a class="btn btn-primary btn-default btn-block" href="/instructors" role="button">
       Application
     </a>
-    <a href="/users/sign_up">
+    <br><br>
+    <p class="sign_up">
+      Sign up as a Traveller
+    </p>
+    <a class="btn btn-primary btn-default btn-block" href="/users/sign_up" role="button">
       Sign Up
     </a>
-    <%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE' %>
   </div>
 
 </div>

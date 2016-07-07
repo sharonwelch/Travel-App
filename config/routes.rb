@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/reviewapp/:id', to: 'admin#reviewindividualapp'
   post '/reviewapp/:id', to: 'admin#reviewindividualapp'
-  post '/instructor_app' => "instructor_apps#create"
+  post '/instructor_app', to: "instructor_apps#create"
   get '/accept', to: 'admin#accept'
   get '/reject', to: 'admin#reject'
   get '/reviewapps', to: 'admin#reviewapps'
@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get '/rejectedapps', to: 'admin#rejectedapps'
   get '/activity/:activity_id/review/new', to: 'reviews#new'
   get '/:instructor_id/activity/new', to: 'activities#new'
+  # added this
+  get '/:instructor_apps_id/instructor/new', to: 'instructors#new'
 
   # @instructor_intro = InstructorApp.all
   # @instructor_intro.each do |a|

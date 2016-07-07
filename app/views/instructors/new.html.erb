@@ -1,2 +1,11 @@
-<h1>Instructors#new</h1>
-<p>Find me in app/views/instructors/new.html.erb</p>
+<h1>Please tell us more about yourself</h1>
+<p>Information you fill out here will be displayed on your instructor profile page.</p>
+<!-- added this -->
+<p>Please give us your story; a paragraph or two about yourself, your activity, and why you want to share this with visitors to your town. </p>
+<%= form_for @newinstructor do |f|%>
+  <%= f.text_area :story %>
+  <%= f.hidden_field :instructor_apps_id, :value => @app_id %>
+  <%= button_tag(type: 'submit', class: 'btn btn-primary') do%>
+  Submit
+  <% end %>
+<% end %>

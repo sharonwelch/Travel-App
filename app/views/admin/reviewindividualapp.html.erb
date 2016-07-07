@@ -25,17 +25,28 @@
   <br/>
   <%= @app.email %>
   <br/>
-  <%= @app.instagram_handle %>
+  <%=@app.phone_number %>
   <br/>
+  Instagram Handle:
+  <%= @app.instagram_handle %><br/>
+  Blog Url:
   <%= @app.blog_url %> <br/>
+  Facebook Url:
   <%= @app.facebook_url %> <br/>
+  Other social media:
   <%= @app.other_social_media %> <br/>
+  What do you love about the place you live? Why?
   <%= @app.love_about_hometown %> <br/>
+  Tells who you are and what excites you?
   <%= @app.who_are %> <br/>
+  What do you think is the most unique thing about you?
   <%= @app.unique_thing %> <br/>
+  Proposed activity title:
   <%= @app.activity_title %> <br/>
+  Describe your proposed activity and previous experience related to this activity.
   <%= @app.activity_desc %> <br/>
   <%= @app.why_share %> <br/>
+  Photos:
   <%= @app.picture %>
   <br/>
   <%= link_to "Accept this application", accept_path, :value => "Accept", :class => "btn btn-primary" %>

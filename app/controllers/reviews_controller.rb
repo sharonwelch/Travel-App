@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @review.save!
 
     flash[:notice] = "Thank you for submitting your review!"
-    redirect_to root_path
+    redirect_to 'individualinstructor/#{id}'
 
   end
 

@@ -23,7 +23,6 @@ class InstructorAppsController < ApplicationController
     @instructor_app.why_share = instructor_app_hash['why_share']
     @instructor_app.picture = instructor_app_hash['picture']
 
-    binding.pry
     if @instructor_app.save
       flash[:notice] = "Thank you for submitting your application!"
       redirect_to root_path

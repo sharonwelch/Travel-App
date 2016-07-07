@@ -19,14 +19,15 @@
   </div>
 </nav>
 
-<h1>Here are the rejected applications:</h1>
+<h1 class="applications">Rejected Applications</h1>
 
-<br>
-<% @rejectedapps.each do |app| %>
-  <%= app.first_name %>
-  <%= app.last_name %>
-  <br>
-  <%= app.email %>
-  <br>
-  <br>
-<% end %>
+<div class="container">
+  <% @rejectedapps.each do |app| %>
+    <%= app.first_name %>
+    <%= app.last_name %>
+    <br>
+    <%= app.email %>
+    <br>
+    <br>
+  <% end %>
+</div>

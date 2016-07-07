@@ -1,12 +1,23 @@
-<h1>activities sorted by <%= @category %></h1>
-<br>
-<% @activities.each do |activity| %>
-<%= activity.title %>
-<br>
-<%= link_to "Read More", "/individualinstructor/#{activity.instructor_id}" %>
-<br>
-<br>
-<% end %>
-<br>
-<br>
-<%= link_to "Back to Instructors", "/instructors" %>
+
+<p class="instructors_sign_in">
+  <%= link_to "Home", root_path, class: "btn btn-primary" %>
+  <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+
+</p>
+
+<h1 class="instructorsh1">Activities Sorted by <%= @category.titleize %></h1>
+<div class= "activities">
+  <% @activities.each do |activity| %>
+  <h3 class="activity_title">
+    <%= activity.title.titleize %>
+  </h3>
+
+  <%= link_to "Read More", "/individualinstructor/#{activity.instructor_id}" %>
+  <br>
+  <br>
+  <% end %>
+
+  <p class="back_to_instructors">
+    <%= link_to "Back to All Instructors", "/instructors", class: "btn btn-default" %>
+  </p>
+</div>

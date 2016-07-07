@@ -19,17 +19,19 @@
   </div>
 </nav>
 
-<h1>New Applications</h1>
+<h1 class="applications">New Applications</h1>
 
 <% @number_of_apps = 0 %>
 
-<% @newapps.each do |app| %>
-  <br/>
-  <%= @number_of_apps += 1 %>.
-  <%= app.first_name %>
-  <%= app.last_name %>
+<div class="container">
+  <% @newapps.each do |app| %>
+    <br/>
+    <%= @number_of_apps += 1 %>.
+    <%= app.first_name %>
+    <%= app.last_name %>
+    <br>
+    <%= link_to "Review Application", "/reviewapp/#{app.id}", :value => "Review Application", :class => "btn btn-primary"%>
+  </br>
   <br>
-  <%= link_to "Review Application", "/reviewapp/#{app.id}", :value => "Review Application", :class => "btn btn-primary"%>
-</br>
-<br>
-<%end%>
+  <%end%>
+</div>

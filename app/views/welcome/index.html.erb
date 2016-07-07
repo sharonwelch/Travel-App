@@ -2,7 +2,7 @@
 <div id="fullpage">
   <div class="section intro">
     <p class="sign_in">
-      <%= link_to "Log In", new_user_session_path %>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
     </p>
     <h1>
       <%= @name %>
@@ -18,7 +18,7 @@
 
   <div class="section stories">
     <p class="sign_in">
-      <%= link_to "Log In", new_user_session_path %>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
     </p>
     <h1>
       <%= @name %>
@@ -34,11 +34,11 @@
 
   <div class="section apply">
     <p class="sign_in">
-      <%= link_to "Log In", new_user_session_path %>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-primary btn-login" %>
     </p>
-    <h1>
+    <h2>
       <%= @name %>
-    </h1>
+    </h2>
     <p class="apply">
       Apply as a Local
     </p>

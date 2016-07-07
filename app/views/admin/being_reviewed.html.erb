@@ -19,15 +19,15 @@
   </div>
 </nav>
 
-<h1>Here are the applications currently awaiting review:</h1>
+<h1 class="applications">Applications currently awaiting review</h1>
 
-
-<br>
-<% @apps_under_review.each do |app| %>
-  <%= app.first_name %>
-  <%= app.last_name %>
-  <br>
-  <%= link_to "Review this Application", "/reviewapp/#{app.id}", :class => 'btn btn-primary'%>
-  <br>
-  <br>
-<% end %>
+<div class="container">
+  <% @apps_under_review.each do |app| %>
+    <%= app.first_name %>
+    <%= app.last_name %>
+    <br>
+    <%= link_to "Review this Application", "/reviewapp/#{app.id}", :class => 'btn btn-primary'%>
+    <br>
+    <br>
+  <% end %>
+</div>

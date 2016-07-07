@@ -1,5 +1,10 @@
-.h1
+%p.instructors_sign_in
+  = link_to "Home", root_path, class: "btn btn-primary"
+
+%h1.application
   Apply Here!
+%h2.applicationdesc
+  Let us know why your local experience is one to share.
 
 .p
   = form_tag("/instructor_apps", method: "post") do |i|
@@ -71,4 +76,4 @@
     -#   %br
     -#   = text_area_tag(:activity_description)
     %br
-    = submit_tag("Submit")
+    = submit_tag("Submit", :class => "btn btn-default btn-submit-app")

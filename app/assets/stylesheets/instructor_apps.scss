@@ -1,3 +1,44 @@
 // Place all the styles related to the Instructor_Apps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.application {
+  padding-left: 70px;
+  background-color: #76DB9F;
+  padding-bottom: 25px;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: left;
+}
+
+.applicationdesc {
+  padding-left: 70px;
+  font-size: 20pt;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+form {
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 80px;
+}
+
+.btn-submit-app {
+  margin-left: 0px;
+  background-color: #7eaab4;
+  border-color: #7eaab4;
+  color: white;
+}
+
+.btn-submit-app:hover, .btn-submit-app:active:focus{
+  background-color:  #76DB9F;
+  border-color:  #76DB9F;
+}
+
+textarea {
+  // resize: none;
+  height: 250px;
+  width: 230px;
+}

@@ -47,9 +47,16 @@
     %br
     = text_field_tag(:activity_title)
     %br
-    = label_tag(:why_share, "Why do you want to share your activities with people?")
+    = label_tag(:why_share, "What motivates you to share your activity?")
     %br
-    = text_area_tag(:why_share) #this needs to be checkboxes
+    = radio_button_tag(:motivation, "monetary")
+    = label_tag(:motivation_monetary, "Monetizing what I love to do")
+    %br
+    = radio_button_tag(:motivation, "teaching")
+    = label_tag(:motivation_teaching, "Desire to pass along knowledge")
+    %br
+    = radio_button(:motivation, "people", :checked => (:motivation == "people"))
+    = label_tag(:motivation_people, "Opportunity to meet interesting people")
     %br
     = label_tag(:picture, "If you have them, please submit any of your photos related to this activity.")
     %br

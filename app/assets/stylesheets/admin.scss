@@ -14,3 +14,16 @@
 .navbar {
   margin-bottom: 0;
 }
+
+.btn-admin {
+  border-width: 3px;
+  border-color: #558691;
+  color: #558691;
+  background-color: transparent;
+}
+
+.btn-admin:hover, .btn-admin:active:focus {
+  background-color: #7eaab4;
+  border-color: #7eaab4;
+  color: white;
+}

@@ -23,13 +23,13 @@
 .instructorsh2 {
   padding-left: 50px;
   font-size: 20pt;
-  padding-top: 0px;
+  padding-top: 10px;
   margin-top: 0;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 
 }
 
-.instructorsh1, .instructorsh2, .instructors_sign_in {
+.instructorsh1, .instructors_sign_in {
   background-color: #76DB9F;
 }
 
@@ -56,13 +56,19 @@
   color: gray;
 }
 
+.dropdown-toggle:hover, .btn-review:hover, .btn-review:active:focus, .btn-back:hover, .btn-back:active:focus {
+  background-color: #afcad0;
+  border-color: #afcad0;
+  color: white;
+}
+
 .container {
   padding-left: 0px;
   padding-top: 30px;
 }
 
 .instructor_info, .activities {
-  padding-top: 15px;
+  padding-top: 10px;
   padding-left: 50px;
 }
 

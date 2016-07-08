@@ -33,7 +33,24 @@ class InstructorAppsController < ApplicationController
   end
 
   def new
+    instructor_app_hash = params
+
     @instructor_app = InstructorApp.new
+    @instructor_app.first_name = instructor_app_hash['first_name']
+    @instructor_app.last_name = instructor_app_hash['last_name']
+    @instructor_app.email = instructor_app_hash['email']
+    @instructor_app.phone_number = instructor_app_hash['phone_number']
+    @instructor_app.instagram_handle = instructor_app_hash['instagram_handle']
+    @instructor_app.blog_url = instructor_app_hash['blog_url']
+    @instructor_app.facebook_url = instructor_app_hash['facebook_url']
+    @instructor_app.other_social_media = instructor_app_hash['other_social_media']
+    @instructor_app.love_about_hometown = instructor_app_hash['love_about_hometown']
+    @instructor_app.who_are = instructor_app_hash['who_are']
+    @instructor_app.unique_thing = instructor_app_hash['unique_thing']
+    @instructor_app.activity_desc = instructor_app_hash['activity_desc']
+    @instructor_app.activity_title = instructor_app_hash['activity_title']
+    @instructor_app.why_share = instructor_app_hash['why_share']
+    @instructor_app.picture = instructor_app_hash['picture']
   end
 
   def edit

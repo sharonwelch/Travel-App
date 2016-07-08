@@ -1,11 +1,50 @@
-<h1>Please tell us more about yourself</h1>
-<p>Information you fill out here will be displayed on your instructor profile page.</p>
+<h1>Congratulations! Please verfiy the following information</h1>
+<h2>Information you fill out here will be displayed on your instructor profile page.</h2>
 <!-- added this -->
 <p>Please give us your story; a paragraph or two about yourself, your activity, and why you want to share this with visitors to your town. </p>
+
 <%= form_for @newinstructor do |f|%>
+
+  <%= f.text_field :first_name %>
+  <%= f.text_field :last_name %>
+
+  <%= label_tag(:story, "Please write a final version of your story") %><br>
   <%= f.text_area :story %>
-  <%= f.hidden_field :instructor_apps_id, :value => @app_id %>
-  <%= button_tag(type: 'submit', class: 'btn btn-primary') do%>
-  Submit
+  <%= label_tag(:picture, "Upload photos of your life") %>
+  <%= f.file_field :picture %>
+
+  <%= f.hidden_field :email, :value => @email %>
+  <%= f.hidden_field :phone, :value => @phone %>
+  <%= f.hidden_field :instructor_apps_id, :value => @instructor_apps_id %>
+
+  <%= f.fields_for @newactivity do |activity_field| %>
+    <%= activity_field.hidden_field :instructor_id, :value => @instructor_id %>
+
+    <%= label_tag(:title, "Title of Activity") %>
+    <%= activity_field.text_field :title, :value => @title %>
+
+    <%= label_tag(:description, "Describe your activity:") %><br>
+    <%= activity_field.text_area :description %><br>
+
+    <%= label_tag(:location, "Where will your activity be located?")%>
+    <%= activity_field.text_field :location%><br>
+
+    <%= label_tag(:duration, "What is your planned duration of this activity?") %>
+    <%= activity_field.text_field :duration %><br>
+
+    <%= label_tag(:photo, "Please submit any of your photos related to this activity.") %>
+    <%= file_field_tag(:photo) %><br>
   <% end %>
+
+  <%= f.fields_for :through_ats do |tag_field| %>
+    <%= label_tag(:tag_id, "What categories does your activity fit into?") %><br>
+    <%= tag_field.check_box(:tag, {}, "cooking") %>
+    <%= tag_field.check_box(:tag, {}, "art") %>
+    <%= tag_field.check_box(:tag, {}, "music") %>
+    <%= tag_field.check_box(:tag, {}, "outdoors") %>
+    <%= tag_field.check_box(:tag, {}, "food") %>
+  <% end %>
+
+<%= f.submit %>
+
 <% end %>

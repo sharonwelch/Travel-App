@@ -16,6 +16,7 @@
   .fp-tableCell {
     padding-top: 35px;
     padding-bottom: 230px;
+    padding-left: 10%;
   }
   h1 {
     text-align: left;
@@ -31,17 +32,45 @@
     padding-bottom: 20px;
     margin-top: 0;
   }
+  .greeting, .mission_statement, .browse {
+    background-color: white;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    opacity: .75;
+  }
+
   .greeting {
     font-size: 42pt;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .mission_statement{
     font-size: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .browse {
     font-size: 30pt;
+    border-radius: 10px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .apply, .sign_up {
     font-size: 25pt;
+    border-radius: 10px;
+    color: white;
   }
   .btn-block {
     text-align: center;
@@ -53,7 +82,7 @@
     margin-left: auto;
     margin-right: auto;
     border-color: white;
-    background-color: transparent;
+    opacity: 20%;
     font-size: x-large;
   }
   .btn-default {
@@ -83,4 +112,10 @@
     color: rgb(75, 191, 195);
     background-color: transparent;
   }
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1423589989400-cc0270157ed0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=74ed0669f62ce934d161079909c707d2");
+  background-size: cover;
+
 }

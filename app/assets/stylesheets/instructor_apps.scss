@@ -5,8 +5,8 @@
 
 .application {
   padding-left: 70px;
-  background-color: #76DB9F;
-  padding-bottom: 25px;
+  // background-color: #76DB9F;
+  padding-bottom: 15px;
   margin-bottom: 0;
   margin-top: 0;
   text-align: left;
@@ -17,6 +17,7 @@
   font-size: 20pt;
   padding-top: 5px;
   padding-bottom: 10px;
+  margin-top: 0;
 }
 
 form {
@@ -40,6 +41,16 @@ form {
 
 textarea {
   // resize: none;
-  height: 250px;
-  width: 230px;
+  height: 200px;
+  width: 350px;
+}
+
+form {
+  background-color: #eff4f6;
+  width: 80%;
+  margin-left: 50px;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  // opacity: .9;
 }

@@ -1,11 +1,22 @@
 // Place all the styles related to the Instructors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+    font-size: 30px;
+    color: white;
+    background-color: #76DB9F;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    margin: 0;
+    padding-right: 10px;
+}
 .instructors_sign_in {
   text-align: right;
   padding-right: 15px;
   padding-top: 10px;
   margin-bottom: 0;
+  font-size: 30px;
+  padding-left: 75%;
 }
 
 .back_to_instructors {
@@ -25,13 +36,16 @@
   font-size: 20pt;
   padding-top: 10px;
   margin-top: 0;
-  padding-bottom: 5px;
+  margin-bottom: 0;
+  padding-bottom: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
 }
 
-.instructorsh1, .instructors_sign_in {
-  background-color: #76DB9F;
-}
+// .instructorsh1, .instructors_sign_in {
+//   background-color: #76DB9F;
+// }
 
 .btn-group {
   padding-left: 50px;
@@ -63,8 +77,10 @@
 }
 
 .container {
-  padding-left: 0px;
+  padding-left: 50px;
   padding-top: 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .instructor_info, .activities {
@@ -72,9 +88,23 @@
   padding-left: 50px;
 }
 
+.container, .instructorsh2, .btn-group {
+  background-color: #eff4f6;
+  width: 100%;
+  padding-right: 30px;
+}
 body {
   background-color: #eff4f6;
+  width: 90%;
+  margin-left: 30px;
 }
+
+// .instructorsh1, .instructors_sign_in {
+//   background-color: #eff4f6;
+//
+// }
+
+
 
 .instructor_name {
   padding-top: 10px;
@@ -83,4 +113,16 @@ body {
 
 .activity_title {
   font-size: 20pt;
+}
+
+.activities {
+  background-color: white;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: .75;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: 50px;
 }

@@ -6,8 +6,9 @@
     = csrf_meta_tags
   %body
     -# belong on a page that doesn't have fullpage.js
-    -# %p.notice= notice
-    -# %p.alert= alert
+    -if !(controller_name.downcase == "welcome" && action_name == "index")
+      %p.notice= notice
+      %p.alert= alert
 
     = yield
 

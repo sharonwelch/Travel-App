@@ -6,51 +6,52 @@
 %h2.applicationdesc
   Let us know why your local experience is one to share.
 
+  -# change all to i.textfiled
 .p
-  = form_tag("/instructor_apps", method: "post") do |i|
+  = form_for(@instructor_app, url: "/instructor_apps", method: "post") do |i|
     = label_tag(:first_name, "First Name")
-    = text_field_tag(:first_name)
+    = i.text_field(:first_name)
     %br
     = label_tag(:last_name, "Last Name")
-    = text_field_tag(:last_name)
+    = i.text_field(:last_name)
     %br
     = label_tag(:email, "Email")
-    = text_field_tag(:email)
+    = i.text_field(:email)
     %br
     = label_tag(:phone_number, "Phone Number")
-    = text_field_tag(:phone_number)
+    = i.text_field(:phone_number)
     %br
     = label_tag(:instagram_handle, "Instagram Handle")
-    = text_field_tag(:instagram_handle)
+    = i.text_field(:instagram_handle)
     %br
     = label_tag(:blog_url, "Blog URL")
-    = text_field_tag(:blog_url)
+    = i.text_field(:blog_url)
     %br
     = label_tag(:facebook_url, "Facebook URL")
-    = text_field_tag(:facebook_url)
+    = i.text_field(:facebook_url)
     %br
     = label_tag(:other_social_media, "Other social media (e.g. Twitter, Pinterest, LinkedIn, etc.)")
-    = text_field_tag(:other_social_media)
+    = i.text_field(:other_social_media)
     %br
     = label_tag(:love_about_hometown, "What do you love about the place you live? Why?")
     %br
-    = text_area_tag(:love_about_hometown)
+    = i.text_field(:love_about_hometown)
     %br
     = label_tag(:who_are, "Tell us who you are and what excites you.")
     %br
-    = text_area_tag(:who_are)
+    = i.text_field(:who_are)
     %br
     = label_tag(:unique_thing, "What do you think is the most unique thing about you?")
     %br
-    = text_area_tag(:unique_thing)
+    = i.text_field(:unique_thing)
     %br
     = label_tag(:activity_desc, "Describe your proposed activity and previous experience related to this activity.")
     %br
-    = text_area_tag(:activity_desc)
+    = i.text_field(:activity_desc)
     %br
     = label_tag(:activity_title, "Proposed activity title")
     %br
-    = text_field_tag(:activity_title)
+    = i.text_field(:activity_title)
     %br
     = label_tag(:why_share, "What motivates you to share your activity?")
     %br
@@ -65,7 +66,7 @@
     %br
     = label_tag(:picture, "If you have them, please submit any of your photos related to this activity.")
     %br
-    = file_field_tag(:picture)
+    = i.text_field(:picture)
     %br
     -# not sure what this is for
     -# = fields_for @activity do |a|

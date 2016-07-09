@@ -1,80 +1,94 @@
-%p.instructors_sign_in
-  = link_to "Home", root_path, class: "btn btn-primary"
+%body.applications
+  %nav.navbar.navbar-default.navbar-static-top.navbar-instructor
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "/", :style => "color:#323333;background-color: #eff4f6; padding: 10; padding-top:15px; border-radius: 5px"} Quirk
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{:href => "/users/sign_in", :style => "color: #323333"} Log In
+          %li
+            %a{:href => "/users/sign_up", :style => "color: #323333"} Sign Up
 
-%h1.application
-  Apply to be a Quirk Instructor
-%h2.applicationdesc
-  Let us know why your local experience is one to share.
+  %h1.application
+    Apply to be a Quirk Instructor
+  %h2.applicationdesc
+    Let us know why your local experience is one to share.
 
-  -# change all to i.textfiled
-.p
-  = form_for(@instructor_app, url: "/instructor_apps", method: "post") do |i|
-    = label_tag(:first_name, "First Name")
-    = i.text_field(:first_name)
-    %br
-    = label_tag(:last_name, "Last Name")
-    = i.text_field(:last_name)
-    %br
-    = label_tag(:email, "Email")
-    = i.text_field(:email)
-    %br
-    = label_tag(:phone_number, "Phone Number")
-    = i.text_field(:phone_number)
-    %br
-    = label_tag(:instagram_handle, "Instagram Handle")
-    = i.text_field(:instagram_handle)
-    %br
-    = label_tag(:blog_url, "Blog URL")
-    = i.text_field(:blog_url)
-    %br
-    = label_tag(:facebook_url, "Facebook URL")
-    = i.text_field(:facebook_url)
-    %br
-    = label_tag(:other_social_media, "Other social media (e.g. Twitter, Pinterest, LinkedIn, etc.)")
-    = i.text_field(:other_social_media)
-    %br
-    = label_tag(:love_about_hometown, "What do you love about the place you live? Why?")
-    %br
-    = i.text_field(:love_about_hometown)
-    %br
-    = label_tag(:who_are, "Tell us who you are and what excites you.")
-    %br
-    = i.text_field(:who_are)
-    %br
-    = label_tag(:unique_thing, "What do you think is the most unique thing about you?")
-    %br
-    = i.text_field(:unique_thing)
-    %br
-    = label_tag(:activity_desc, "Describe your proposed activity and previous experience related to this activity.")
-    %br
-    = i.text_field(:activity_desc)
-    %br
-    = label_tag(:activity_title, "Proposed activity title")
-    %br
-    = i.text_field(:activity_title)
-    %br
-    = label_tag(:why_share, "What motivates you to share your activity?")
-    %br
-    = radio_button_tag(:why_share, "monetary")
-    = label_tag(:why_share_monetary, "Monetizing what I love to do")
-    %br
-    = radio_button_tag(:why_share, "teaching")
-    = label_tag(:why_share_teaching, "Desire to pass along knowledge")
-    %br
-    = radio_button_tag(:why_share, "people")
-    = label_tag(:why_share_people, "Opportunity to meet interesting people")
-    %br
-    = label_tag(:picture, "If you have them, please submit any of your photos related to this activity.")
-    %br
-    = i.text_field(:picture)
-    %br
-    -# not sure what this is for
-    -# = fields_for @activity do |a|
-    -#   = label_tag(:activity_title, "Activity Title")
-    -#   = text_field_tag(:activity_title)
-    -#   %br
-    -#   = label_tag(:activity_description, "Describe your activity")
-    -#   %br
-    -#   = text_area_tag(:activity_description)
-    %br
-    = submit_tag("Submit", :class => "btn btn-default btn-submit-app")
+    -# change all to i.textfiled
+  .p
+    = form_for(@instructor_app, url: "/instructor_apps", method: "post") do |i|
+      = label_tag(:first_name, "First Name")
+      = i.text_field(:first_name)
+      %br
+      = label_tag(:last_name, "Last Name")
+      = i.text_field(:last_name)
+      %br
+      = label_tag(:email, "Email")
+      = i.text_field(:email)
+      %br
+      = label_tag(:phone_number, "Phone Number")
+      = i.text_field(:phone_number)
+      %br
+      = label_tag(:instagram_handle, "Instagram Handle")
+      = i.text_field(:instagram_handle)
+      %br
+      = label_tag(:blog_url, "Blog URL")
+      = i.text_field(:blog_url)
+      %br
+      = label_tag(:facebook_url, "Facebook URL")
+      = i.text_field(:facebook_url)
+      %br
+      = label_tag(:other_social_media, "Other social media (e.g. Twitter, Pinterest, LinkedIn, etc.)")
+      = i.text_field(:other_social_media)
+      %br
+      = label_tag(:love_about_hometown, "What do you love about the place you live? Why?")
+      %br
+      = i.text_field(:love_about_hometown)
+      %br
+      = label_tag(:who_are, "Tell us who you are and what excites you.")
+      %br
+      = i.text_field(:who_are)
+      %br
+      = label_tag(:unique_thing, "What do you think is the most unique thing about you?")
+      %br
+      = i.text_field(:unique_thing)
+      %br
+      = label_tag(:activity_desc, "Describe your proposed activity and previous experience related to this activity.")
+      %br
+      = i.text_field(:activity_desc)
+      %br
+      = label_tag(:activity_title, "Proposed activity title")
+      %br
+      = i.text_field(:activity_title)
+      %br
+      = label_tag(:why_share, "What motivates you to share your activity?")
+      %br
+      = radio_button_tag(:why_share, "monetary")
+      = label_tag(:why_share_monetary, "Monetizing what I love to do")
+      %br
+      = radio_button_tag(:why_share, "teaching")
+      = label_tag(:why_share_teaching, "Desire to pass along knowledge")
+      %br
+      = radio_button_tag(:why_share, "people")
+      = label_tag(:why_share_people, "Opportunity to meet interesting people")
+      %br
+      = label_tag(:picture, "If you have them, please submit any of your photos related to this activity.")
+      %br
+      = i.text_field(:picture)
+      %br
+      -# not sure what this is for
+      -# = fields_for @activity do |a|
+      -#   = label_tag(:activity_title, "Activity Title")
+      -#   = text_field_tag(:activity_title)
+      -#   %br
+      -#   = label_tag(:activity_description, "Describe your activity")
+      -#   %br
+      -#   = text_area_tag(:activity_description)
+      %br
+      = submit_tag("Submit", :class => "btn btn-default btn-submit-app")

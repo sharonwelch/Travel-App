@@ -1,24 +1,37 @@
-%p.instructors_sign_in
-  = link_to "Home", root_path, class: "btn btn-primary"
-  = link_to "Log In", new_user_session_path, class: "btn btn-primary"
+%body.reviews
+  %nav.navbar.navbar-default.navbar-static-top.navbar-instructor
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "/", :style => "color: #323333"} Quirk
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{:href => "/users/sign_in", :style => "color: #323333"} Log In
+          %li
+            %a{:href => "/users/sign_up", :style => "color: #323333"} Sign Up
 
-%h1.review
-  Review an activity
+  %h1.review
+    Review an activity
 
-%p
-  = form_tag("/reviews", method: "post") do |i|
-    = label_tag(:first_name, "First Name")
-    = text_field_tag(:first_name)
-    %br
-    = label_tag(:last_name, "Last Name")
-    = text_field_tag(:last_name)
-    %br
-    = label_tag(:rating, "Rating (1-5)")
-    = text_field_tag(:rating)
-    %br
-    = hidden_field_tag :activity_id, @activity_id
-    = label_tag(:content, "Your Review:")
-    %br
-    = text_area_tag(:content)
-    %br
-    = submit_tag("Submit", :class => "btn btn-default btn-submit")
+  %p
+    = form_tag("/reviews", method: "post") do |i|
+      = label_tag(:first_name, "First Name")
+      = text_field_tag(:first_name)
+      %br
+      = label_tag(:last_name, "Last Name")
+      = text_field_tag(:last_name)
+      %br
+      = label_tag(:rating, "Rating (1-5)")
+      = text_field_tag(:rating)
+      %br
+      = hidden_field_tag :activity_id, @activity_id
+      = label_tag(:content, "Your Review:")
+      %br
+      = text_area_tag(:content)
+      %br
+      = submit_tag("Submit", :class => "btn btn-default btn-submit")

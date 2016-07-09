@@ -4,17 +4,26 @@
 
 .review {
   padding-left: 50px;
-  background-color: #76DB9F;
+  // background-color: #76DB9F;
   padding-bottom: 20px;
   margin-bottom: 0;
   margin-top: 0;
   text-align: left;
+  color: white;
 }
 
 form {
   text-align: left;
   padding-top: 15px;
-  padding-left: 50px;
+  padding-left: 0;
+  width: 350px;
+
+}
+
+.reviews {
+  background-image: none;
+  background-color: #00cc99;
+  padding-left: 0;
 }
 
 .btn-submit {

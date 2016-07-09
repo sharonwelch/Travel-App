@@ -1,6 +1,32 @@
 // Place all the styles related to the Instructors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.navbar-brand {
+  font-size: 40px;
+  padding-left: 30px;
+  color: #5ed48d;
+}
+
+.navbar-instructor {
+  margin-bottom: 20px;
+  // background-color: #eff4f6;
+  background-color: transparent;
+  border-color: transparent;
+  padding-top: 10px;
+  // padding-bottom: 10px;
+  border-radius: 5px;
+  padding-right: 10px;
+  color:black;
+
+}
+
+.alert {
+  margin-bottom: 0;
+  padding: 0;
+}
+
 .header {
     font-size: 30px;
     color: white;
@@ -26,9 +52,11 @@
 .instructorsh1 {
   padding-left: 50px;
   // padding-top: 20px;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
   margin-bottom: 0;
   margin-top: 0;
+  // color: #36c971;
+  color: #00cc99;
 }
 
 .instructorsh2 {
@@ -40,6 +68,8 @@
   padding-bottom: 15px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  // color: #3366ff;
+  color: #33cccc;
 
 }
 
@@ -81,6 +111,7 @@
   padding-top: 30px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+
 }
 
 .instructor_info, .activities {
@@ -89,14 +120,29 @@
 }
 
 .container, .instructorsh2, .btn-group {
-  background-color: #eff4f6;
+  // background-color: #eff4f6;
   width: 100%;
   padding-right: 30px;
 }
-body {
-  background-color: #eff4f6;
+
+.container2 {
+  // background-color: #eff4f6;
   width: 90%;
+  padding-right: 30px;
+  border-radius: 10px;
   margin-left: 30px;
+  padding-bottom: 10px;
+}
+
+.instructors {
+  background-color: #e6f7ff;
+  width: 100%;
+  background-image: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
 }
 
 // .instructorsh1, .instructors_sign_in {
@@ -116,13 +162,13 @@ body {
 }
 
 .activities {
-  background-color: white;
+  // background-color: white;
   padding-bottom: 20px;
-  padding-top: 20px;
+  // padding-top: 20px;
   margin-top: 0;
   margin-bottom: 0;
   opacity: .75;
   border-radius: 10px;
   width: 50%;
-  margin-left: 50px;
+  // margin-left: 50px;
 }

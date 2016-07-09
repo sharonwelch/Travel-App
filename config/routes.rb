@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   # added this
   get '/:instructor_apps_id/instructor/new', to: 'instructors#new'
 
+  get '/contact_us' => 'contact_info#index'
+  post '/contact_us' => 'contact_info#index'
   # @instructor_intro = InstructorApp.all
   # @instructor_intro.each do |a|
   #   get '/instructor_profile/#{a}', to: 'welcome#instructor_profile'

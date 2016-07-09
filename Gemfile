@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'react-rails'
+gem 'haml'
 gem 'jquery-turbolinks'
 gem 'workflow'
 gem 'pry'

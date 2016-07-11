@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'schedule/index'
+
   get 'admin/index'
 
   devise_for :controllers => {registrations: 'registrations'}
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
   get '/rejectedapps', to: 'admin#rejectedapps'
   get '/activity/:activity_id/review/new', to: 'reviews#new'
   get '/:instructor_id/activity/new', to: 'activities#new'
+  get '/activity/:activity_id/signup', to: 'schedule#index'
   get '/instructor/new', to: 'instructors#new'
 
   get '/contact_us' => 'contact_info#index'

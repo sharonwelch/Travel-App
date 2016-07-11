@@ -1,0 +1,7 @@
+<h1> Your application status: </h1>
+
+<h3> Hello <%= @instructorworkflow.first_name %> <%= @instructorworkflow.last_name %>! </h3>
+
+We currently have many applications under review. To keep you updated during the process, here is the status of your application:
+
+<%= @instructorworkflow.workflow_state %>

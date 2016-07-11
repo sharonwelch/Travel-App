@@ -100,6 +100,11 @@ class InstructorAppsController < ApplicationController
     redirect_to instructor_apps_path
   end
 
+  def workflow
+    id = params[:id]
+    @instructorworkflow = InstructorApp.where(id: id).first
+  end
+
   # this is no longer relevant
   # def activity
   #   id = params[:id]

@@ -36,6 +36,7 @@ class AdminController < ApplicationController
       @acceptedapps = InstructorApp.where(workflow_state: :accepted)
       redirect_to acceptedapps_path
       flash[:notice] = @app.first_name + " " + @app.last_name + "'s application was just accepted!"
+      #UserNotifier.send_accepted_email.deliver_now
     end
   end
 

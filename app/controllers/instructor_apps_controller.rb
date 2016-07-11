@@ -1,4 +1,6 @@
 class InstructorAppsController < ApplicationController
+
+
   def index
     @instructor_apps = InstructorApp.all
   end
@@ -25,6 +27,7 @@ class InstructorAppsController < ApplicationController
 
     if @instructor_app.save
       flash[:notice] = "Thank you for submitting your application!"
+      #UserNotifier.send_confirmation_email.deliver_now
       redirect_to root_path
     else
       flash[:notice] = "Some fields are still blank"

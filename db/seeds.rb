@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 cooking = Tag.create(category: "cooking")
-active = Tag.create(category: "active")
 art = Tag.create(category: "art")
 music = Tag.create(category: "music")
+outdoors = Tag.create(category: "outdoors")
+food = Tag.create(category: "food")

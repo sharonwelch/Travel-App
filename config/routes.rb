@@ -27,8 +27,7 @@ Rails.application.routes.draw do
   get '/rejectedapps', to: 'admin#rejectedapps'
   get '/activity/:activity_id/review/new', to: 'reviews#new'
   get '/:instructor_id/activity/new', to: 'activities#new'
-  # added this
-  get '/:instructor_apps_id/instructor/new', to: 'instructors#new'
+  get '/instructor/new', to: 'instructors#new'
 
   get '/contact_us' => 'contact_info#index'
   post '/contact_us' => 'contact_info#index'

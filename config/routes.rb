@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/reviewapp/:id', to: 'admin#reviewindividualapp'
   post '/reviewapp/:id', to: 'admin#reviewindividualapp'
   post '/instructor_app', to: "instructor_apps#create"
+  get '/applicationworkflow/:id', to: "instructor_apps#workflow"
   get '/accept', to: 'admin#accept'
   get '/reject', to: 'admin#reject'
   get '/reviewapps', to: 'admin#reviewapps'

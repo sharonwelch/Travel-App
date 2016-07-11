@@ -1,12 +1,13 @@
 class InstructorAppsController < ApplicationController
 
+  before_action :authenticate_user! #, :except => [:index]
 
   def index
     @instructor_apps = InstructorApp.all
   end
 
   def create
-    instructor_app_hash = params
+    instructor_app_hash = params[:instructor_app]
 
     @instructor_app = InstructorApp.new
     @instructor_app.first_name = instructor_app_hash['first_name']
@@ -22,9 +23,8 @@ class InstructorAppsController < ApplicationController
     @instructor_app.unique_thing = instructor_app_hash['unique_thing']
     @instructor_app.activity_desc = instructor_app_hash['activity_desc']
     @instructor_app.activity_title = instructor_app_hash['activity_title']
-    @instructor_app.why_share = instructor_app_hash['why_share']
+    @instructor_app.why_share = params['why_share']
     @instructor_app.picture = instructor_app_hash['picture']
-
     if @instructor_app.save
       flash[:notice] = "Thank you for submitting your application!"
       #UserNotifier.send_confirmation_email.deliver_now
@@ -33,10 +33,12 @@ class InstructorAppsController < ApplicationController
       flash[:notice] = "Some fields are still blank"
       render :action => :new
     end
+    current_user.is_instructor = true
+    current_user.save!
   end
 
   def new
-    instructor_app_hash = params
+    instructor_app_hash = params[:instructor_app]
 
     @instructor_app = InstructorApp.new
     @instructor_app.first_name = instructor_app_hash['first_name']
@@ -52,7 +54,7 @@ class InstructorAppsController < ApplicationController
     @instructor_app.unique_thing = instructor_app_hash['unique_thing']
     @instructor_app.activity_desc = instructor_app_hash['activity_desc']
     @instructor_app.activity_title = instructor_app_hash['activity_title']
-    @instructor_app.why_share = instructor_app_hash['why_share']
+    @instructor_app.why_share = params['why_share']
     @instructor_app.picture = instructor_app_hash['picture']
   end
 
@@ -68,7 +70,7 @@ class InstructorAppsController < ApplicationController
 
   def update
     id = params[:id]
-    instructor_app_hash = params
+    instructor_app_hash = params[:instructor_app]
     @instructor_app = InstructorApp.find(id)
     @instructor_app.first_name = instructor_app_hash['first_name']
     @instructor_app.last_name = instructor_app_hash['last_name']
@@ -83,7 +85,7 @@ class InstructorAppsController < ApplicationController
     @instructor_app.unique_thing = instructor_app_hash['unique_thing']
     @instructor_app.activity_desc = instructor_app_hash['activity_desc']
     @instructor_app.activity_title = instructor_app_hash['activity_title']
-    @instructor_app.why_share = instructor_app_hash['why_share']
+    @instructor_app.why_share = params['why_share']
     @instructor_app.picture = instructor_app_hash['picture']
 
 

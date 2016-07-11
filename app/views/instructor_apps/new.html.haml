@@ -49,19 +49,19 @@
       %br
       = label_tag(:love_about_hometown, "What do you love about the place you live? Why?")
       %br
-      = i.text_field(:love_about_hometown)
+      = i.text_area(:love_about_hometown)
       %br
       = label_tag(:who_are, "Tell us who you are and what excites you.")
       %br
-      = i.text_field(:who_are)
+      = i.text_area(:who_are)
       %br
       = label_tag(:unique_thing, "What do you think is the most unique thing about you?")
       %br
-      = i.text_field(:unique_thing)
+      = i.text_area(:unique_thing)
       %br
       = label_tag(:activity_desc, "Describe your proposed activity and previous experience related to this activity.")
       %br
-      = i.text_field(:activity_desc)
+      = i.text_area(:activity_desc)
       %br
       = label_tag(:activity_title, "Proposed activity title")
       %br
@@ -80,15 +80,7 @@
       %br
       = label_tag(:picture, "If you have them, please submit any of your photos related to this activity.")
       %br
-      = i.text_field(:picture)
+      = i.file_field(:picture)
       %br
-      -# not sure what this is for
-      -# = fields_for @activity do |a|
-      -#   = label_tag(:activity_title, "Activity Title")
-      -#   = text_field_tag(:activity_title)
-      -#   %br
-      -#   = label_tag(:activity_description, "Describe your activity")
-      -#   %br
-      -#   = text_area_tag(:activity_description)
       %br
       = submit_tag("Submit", :class => "btn btn-default btn-submit-app")

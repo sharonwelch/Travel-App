@@ -6,21 +6,40 @@ class InstructorsController < ApplicationController
   end
 
   def create
-    @newinstructor = Instructor.new(instructor_params)
-    # @app_id = params[:instructor_apps_id]
-    # @instructor_app = InstructorApp.where(id: @newinstructor.instructor_apps_id)
-    @newinstructor.first_name = @instructorapp.first_name
-    @newinstructor.last_name = @instructorapp.last_name
-    @newinstructor.email = @instructorapp.story
-    @newinstructor.phone_number = @instructorapp.phone_number
+    @newinstructor = Instructor.new
+    @newinstructor_app = InstructorApp.where(first_name: params['instructor']['first_name']).where(last_name: params['instructor']['last_name'])
 
+    @newinstructor.first_name = params['instructor']['first_name']
+    @newinstructor.last_name = params['instructor']['last_name']
+    @newinstructor.story = params['instructor']['story']
+    @newinstructor.instructor_apps_id = @newinstructor_app.pluck(:id).first
+    @newinstructor.email = @newinstructor_app.pluck(:email).first
+    @newinstructor.phone_number = @newinstructor_app.pluck(:phone_number).first
     @newinstructor.save
-    binding.pry
 
-    @newactivity = Activity.new(params[:activity_params])
-    @newinstructor.activities << @newactivity
+    @newactivity = Activity.new
+
+    @newactivity.title = params['instructor']['activity']['title']
+    @newactivity.description = params['instructor']['activity']['description']
+    @newactivity.instructor_id = @newinstructor.id
+    @newactivity.location = params['instructor']['activity']['location']
+    @newactivity.photo = params['photo']
+    @newactivity.duration = params['instructor']['activity']['duration']
     @newactivity.save
 
+    @key = []
+    @array = params['instructor']['through_ats'].keys
+    0.upto(@array.length) do |x|
+      @newthroughat = ThroughAt.new
+      @newthroughat.activity_id = @newactivity.id
+      hash = params['instructor']['through_ats']
+      var = hash[@array[x]]
+      if var == "1"
+        @key << @array[x]
+      end
+      @newthroughat.tag_id = Tag.where(category: key).pluck(:id)
+      @newthroughat.save
+    end
   end
 
 
@@ -72,7 +91,7 @@ class InstructorsController < ApplicationController
   private
   def instructor_params
     params.require(:instructor).permit(activity_attributes: [:title, :description, :location, :duration, :photo])
-    params.require(:instructor).permit(through_ats_attributes: [:tag_id])
+    params.require(:instructor).permit(through_ats: [:cooking, :art, :music, :outdoors, :food])
   end
 
 end

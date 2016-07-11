@@ -6,6 +6,7 @@ gem 'jquery-turbolinks'
 gem 'workflow'
 gem 'pry'
 gem 'sql'
+gem 'sendgrid'
 gem 'paperclip', "~> 5.0.0"
 gem 'sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

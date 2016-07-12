@@ -52,6 +52,7 @@ class AdminController < ApplicationController
       @rejectedapps = InstructorApp.where(workflow_state: :rejected)
       redirect_to rejectedapps_path
       flash[:notice] = @app.first_name + " " + @app.last_name + "'s application was just rejected :("
+      #UserNotifier.send_rejected_email.deliver_now
     end
   end
 

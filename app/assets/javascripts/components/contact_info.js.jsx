@@ -19,7 +19,8 @@ var ContactInfo = React.createClass({
     }
     return (
       <div>
-        <div>Our Team {arrayOfContacts}</div>
+        <h1>Our Team </h1>
+        <h3> {arrayOfContacts}</h3>
       </div>
     );
   }

@@ -11,3 +11,7 @@ art = Tag.create(category: "art")
 music = Tag.create(category: "music")
 outdoors = Tag.create(category: "outdoors")
 food = Tag.create(category: "food")
+
+sharon = Contact.create(fullname: "Sharon Welch", email: "sharon.welch@yale.edu", current_admin: true)
+ellis = Contact.create(fullname: "Ellis Burgoon Miskell", email: "ellis.burgoonmiskell@yale.edu", current_admin: true)
+zoe = Contact.create(fullname: "Zoe Henry", email: "zoe.henry@yale.edu", current_admin: true)

@@ -1,9 +1,16 @@
 class ContactInfoController < ApplicationController
 
   def index
-    @contact_name = "Sharon Welch"
-    @contact_email = "sharon.welch@yale.edu"
-    @contacts = [{contact_name: @contact_name, contact_email: @contact_email}]
+    current_admin = true
+    svc = ContactService.new(current_admin)
+    @names = svc.contact[0]
+    @emails = svc.contact[1]
+    @contacts = []
+    0.upto(@names.length - 1) do |x|
+      name = @names[x]
+      email = @emails[x]
+      @contacts << {contact_name: name, contact_email: email}
+    end
   end
 
 end

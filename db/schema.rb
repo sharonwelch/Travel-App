@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160712024720) do
+ActiveRecord::Schema.define(version: 20160712144633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,13 +25,19 @@ ActiveRecord::Schema.define(version: 20160712024720) do
     t.string   "duration"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "availability"
     t.string   "activity_photo_file_name"
     t.string   "activity_photo_content_type"
     t.integer  "activity_photo_file_size"
     t.datetime "activity_photo_updated_at"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "fullname"
+    t.string   "email"
+    t.boolean  "current_admin"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "availability"
   end
 
   create_table "instructor_apps", force: :cascade do |t|
@@ -126,8 +131,8 @@ ActiveRecord::Schema.define(version: 20160712024720) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.boolean  "is_admin"
     t.boolean  "is_instructor"
     t.boolean  "is_customer"

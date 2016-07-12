@@ -12,6 +12,7 @@ class InstructorsController < ApplicationController
     @newinstructor.first_name = params['instructor']['first_name']
     @newinstructor.last_name = params['instructor']['last_name']
     @newinstructor.story = params['instructor']['story']
+    @newinstructor.instructor_photo = params['instructor']['instructor_photo']
     @newinstructor.instructor_apps_id = @newinstructor_app.pluck(:id).first
     @newinstructor.email = @newinstructor_app.pluck(:email).first
     @newinstructor.phone_number = @newinstructor_app.pluck(:phone_number).first
@@ -23,7 +24,7 @@ class InstructorsController < ApplicationController
     @newactivity.description = params['instructor']['activity']['description']
     @newactivity.instructor_id = @newinstructor.id
     @newactivity.location = params['instructor']['activity']['location']
-    @newactivity.photo = params['photo']
+    @newactivity.activity_photo = params['activity_photo']
     @newactivity.duration = params['instructor']['activity']['duration']
     @newactivity.save
 

@@ -11,8 +11,8 @@
   <br>
   <%= label_tag(:story, "Please write a final version of your story") %><br>
   <%= f.text_area :story %>
-  <%= label_tag(:picture, "Please attach a photo of yourself. (It will be displayed on your instuctor page.)") %>
-  <%= f.file_field :picture %>
+  <%= label_tag(:instructor_photo, "Please attach a photo of yourself. (It will be displayed on your instuctor page.)") %>
+  <%= f.file_field :instructor_photo %>
   <br>
   <%= f.hidden_field :email, :value => @email %>
   <%= f.hidden_field :phone, :value => @phone %>
@@ -33,8 +33,8 @@
     <%= label_tag(:duration, "What is your planned duration of this activity?") %>
     <%= activity_field.text_field :duration %><br>
 
-    <%= label_tag(:photo, "Please submit any of your photos related to this activity.") %>
-    <%= file_field_tag(:photo) %><br>
+    <%= label_tag(:activity_photo, "Please submit any of your photos related to this activity.") %>
+    <%= file_field_tag(:activity_photo) %><br>
   <% end %>
 
   <%= f.fields_for :through_ats do |tag_field| %>

@@ -20,12 +20,20 @@ class UserNotifier < ApplicationMailer
     )
   end
   def send_scheduling_2us
-    @email3 = #email from form user account
-    @datetime = #info from form
-    @activity = #info from form
-    @first_name3 = #fname from form user account
-    @last_name3 = #lname from form user account
-    @instructor
+    @schedule = Schedule.last
+    @email3 = User.where(id: @schedule.user_id).pluck(:email)
+    #info from form
+    @possible_start_1 = @schedule.possible_start_1
+    @possible_end_1 = @schedule.possible_end_1
+    @possible_start_2 = @schedule.possible_start_2
+    @possible_end_2 = @schedule.possible_end_2
+    @possible_start_3 = @schedule.possible_start_3
+    @possible_end_3 = @schedule.possible_end_3
+    @activity = Activity.where(id: @schedule.activity_id).pluck(:title)
+    @first_name3 = User.where(id: @schedule.user_id).pluck(:first_name)
+    @last_name3 = User.where(id: @schedule.user_id).pluck(:last_name)
+    @instructoremail = Instructor.where(id: @schedule.instructor_id).pluck(:email)
+    @instructor_firstname = Instructor.where(id: @schedule.instructor_id).pluck(:first_name)
     mail (
       to: ['zoe.henry@yale.edu', 'ellis.burgoonmiskell@yale.edu', 'sharon.welch@yale.edu'],
       from: 'quirkscheduling@quirk.com',

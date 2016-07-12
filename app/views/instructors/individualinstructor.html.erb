@@ -35,15 +35,18 @@
 
   <p>
     ADD ACTUAL STORY!!!
-    <%= @instructor.who_are %>
+    <%= @instructor.story %>
   </p>
 
   <h2>
-    <%= @instructor.activity_title.titleize %>
+    <%= @activity.title.titleize %>
   </h2>
 
   <p>
-    <%= @instructor.activity_desc %>
+    Location: <%= @activity.location %>
+    Price: $<%= @activity.price %>
+    Duration: <%= @activity.duration %>
+    <%= @activity.description %>
   </p>
 
   <%= link_to "Sign up for this activity", "/activity/#{@activity_id}/signup", :class => "btn btn-default btn-review" %>

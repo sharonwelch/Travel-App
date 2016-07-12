@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :controllers => {registrations: 'registrations'}
   devise_for :users
 
+  resources :users
   resources :instructors
   resources :activities
   resources :reviews
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
   get '/activity/:activity_id/review/new', to: 'reviews#new'
   get '/:instructor_id/activity/new', to: 'activities#new'
   get '/activity/:activity_id/signup', to: 'schedule#index'
+  post '/activity/:activity_id/signup', to: 'schedule#create'
   get '/instructor/new', to: 'instructors#new'
 
   get '/contact_us' => 'contact_info#index'

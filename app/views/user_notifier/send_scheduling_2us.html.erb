@@ -1,6 +1,9 @@
-This person wants to schedule this activity:
-<%= @first_name3 %>
-<%= @last_name3 %>
-<%= @activity %>
-<%= @datetime %>
-<%= @instructor %>
+This person wants to schedule this <%= @activity %> (<%= @schedule.activity_id %>) with <%= @instructor_firstname %> :
+name: <%= @first_name3 %> <%= @last_name3 %>
+user_id: <%= @schedule.user_id %>
+instructor_id: <%= @schedule.instructor_id %>
+
+Here are the available time blocks:
+<%= @possible_start_1 %> to <%= @possible_end_1 %>
+<%= @possible_start_2 %> to <%= @possible_end_2 %>
+<%= @possible_start_3 %> to <%= @possible_end_3 %>

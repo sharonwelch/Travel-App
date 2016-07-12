@@ -1,8 +1,9 @@
 class InstructorsController < ApplicationController
   def index
     # binding.pry
-    @allinstructors = InstructorApp.where(workflow_state: :accepted)
-    @ids = InstructorApp.where(workflow_state: :accepted).pluck(:id)
+    @allinstructors = Instructor.all
+    @ids = Instructor.all.pluck(:id)
+    @activity = Activity.where(instructor_id: instructor.id)
   end
 
   def create
@@ -16,7 +17,7 @@ class InstructorsController < ApplicationController
     @newinstructor.instructor_apps_id = @newinstructor_app.pluck(:id).first
     @newinstructor.email = @newinstructor_app.pluck(:email).first
     @newinstructor.phone_number = @newinstructor_app.pluck(:phone_number).first
-    @newinstructor.save
+    @newinstructor.save!
 
     @newactivity = Activity.new
 
@@ -26,7 +27,7 @@ class InstructorsController < ApplicationController
     @newactivity.location = params['instructor']['activity']['location']
     @newactivity.activity_photo = params['activity_photo']
     @newactivity.duration = params['instructor']['activity']['duration']
-    @newactivity.save
+    @newactivity.save!
 
     @key = []
     @array = params['instructor']['through_ats'].keys
@@ -39,7 +40,7 @@ class InstructorsController < ApplicationController
         @key << @array[x]
       end
       @newthroughat.tag_id = Tag.where(category: key).pluck(:id)
-      @newthroughat.save
+      @newthroughat.save!
     end
   end
 
@@ -65,7 +66,7 @@ class InstructorsController < ApplicationController
 
   def individualinstructor
     id = params[:id]
-    @instructor = InstructorApp.where(id: id).first
+    @instructor = Instructor.where(id: id).first
     if Activity.where(instructor_id: id).length == 0
       redirect_to instructors_path
       flash[:notice] = "This instructor currently does not have any activities available."
@@ -73,6 +74,7 @@ class InstructorsController < ApplicationController
       @activity_id = Activity.where(instructor_id: id).last.id
       @reviews = Review.where(activity_id: @activity_id)
     end
+    @activity = Activity.where(instructor_id: id)
   end
 
   def filter

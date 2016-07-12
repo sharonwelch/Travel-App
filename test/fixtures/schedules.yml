@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  possible_start_1: 2016-07-11 22:02:52
+  possible_end_1: 2016-07-11 22:02:52
+  possible_start_2: 2016-07-11 22:02:52
+  possible_end_2: 2016-07-11 22:02:52
+  possible_start_3: 2016-07-11 22:02:52
+  possible_end_3: 2016-07-11 22:02:52
+
+two:
+  possible_start_1: 2016-07-11 22:02:52
+  possible_end_1: 2016-07-11 22:02:52
+  possible_start_2: 2016-07-11 22:02:52
+  possible_end_2: 2016-07-11 22:02:52
+  possible_start_3: 2016-07-11 22:02:52
+  possible_end_3: 2016-07-11 22:02:52

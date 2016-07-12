@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712020759) do
+
+ActiveRecord::Schema.define(version: 20160712024720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +30,9 @@ ActiveRecord::Schema.define(version: 20160712020759) do
     t.string   "activity_photo_content_type"
     t.integer  "activity_photo_file_size"
     t.datetime "activity_photo_updated_at"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "availability"
   end
 
   create_table "instructor_apps", force: :cascade do |t|
@@ -82,6 +86,20 @@ ActiveRecord::Schema.define(version: 20160712020759) do
     t.string   "last_name"
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.datetime "possible_start_1"
+    t.datetime "possible_end_1"
+    t.datetime "possible_start_2"
+    t.datetime "possible_end_2"
+    t.datetime "possible_start_3"
+    t.datetime "possible_end_3"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "activity_id"
+    t.integer  "instructor_id"
+    t.integer  "user_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string   "category"
     t.datetime "created_at", null: false
@@ -108,14 +126,8 @@ ActiveRecord::Schema.define(version: 20160712020759) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-<<<<<<< 7f2626167b0496e95d06c8f3b4c7f811105932d9
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-=======
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.boolean  "admin",                  default: false
->>>>>>> working on stuff, most of this probably doesn't work
     t.boolean  "is_admin"
     t.boolean  "is_instructor"
     t.boolean  "is_customer"

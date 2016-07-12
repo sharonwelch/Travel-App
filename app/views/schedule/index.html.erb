@@ -18,7 +18,39 @@
   </div>
 </nav>
 
-<h1>Schedule#index</h1>
-<p>Find me in app/views/schedule/index.html.erb</p>
+<h1>Schedule your activity!</h1>
+<p>Please fill out the form below so we can find a time for you to do this activity!</p>
 
-FORM!!!
+Please provide upto three possible time blocks so that we can coodinate with the instructor.
+<%= form_for @activity_id do |f|%>
+  <%= label_tag(:possible_start_1, "Start Time:") %>
+  <%= f.datetime_local_field :possible_start_1 %>
+  <br>
+  <%= label_tag(:possible_end_1, "End Time:") %>
+  <%= f.datetime_local_field :possible_end_1 %>
+  <br>
+  <br>
+  <%= label_tag(:possible_start_2, "Start Time:") %>
+  <%= f.datetime_local_field :possible_start_2 %>
+  <br>
+  <%= label_tag(:possible_end_2, "End Time:") %>
+  <%= f.datetime_local_field :possible_end_2 %>
+  <br>
+  <br>
+  <%= label_tag(:possible_start_3, "Start Time:") %>
+  <%= f.datetime_local_field :possible_start_3 %>
+  <br>
+  <%= label_tag(:possible_end_3, "End Time:") %>
+  <%= f.datetime_local_field :possible_end_3 %><br>
+  <br>
+
+  <br>
+  <%= f.hidden_field :activity_id, :value => @activity_id %>
+  <%= f.hidden_field :instructor_id, :value => @instructor_id %>
+  <%= f.hidden_field :user_id, :value => @user_id %>
+
+
+
+<%= submit_tag("Submit", :class => "btn btn-default btn-submit-app") %>
+
+<% end %>

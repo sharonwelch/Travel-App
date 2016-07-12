@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160711202900) do
+ActiveRecord::Schema.define(version: 20160712020759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,11 +21,14 @@ ActiveRecord::Schema.define(version: 20160711202900) do
     t.text     "description"
     t.integer  "instructor_id"
     t.string   "location"
-    t.string   "photo"
     t.string   "price"
     t.string   "duration"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "activity_photo_file_name"
+    t.string   "activity_photo_content_type"
+    t.integer  "activity_photo_file_size"
+    t.datetime "activity_photo_updated_at"
   end
 
   create_table "instructor_apps", force: :cascade do |t|
@@ -37,7 +40,6 @@ ActiveRecord::Schema.define(version: 20160711202900) do
     t.string   "blog_url"
     t.string   "facebook_url"
     t.string   "other_social_media"
-    t.string   "picture"
     t.string   "activities"
     t.text     "love_about_hometown"
     t.text     "who_are"
@@ -59,11 +61,14 @@ ActiveRecord::Schema.define(version: 20160711202900) do
     t.string   "last_name"
     t.string   "email"
     t.string   "phone_number"
-    t.string   "picture"
     t.integer  "instructor_apps_id"
     t.text     "story"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "instructor_photo_file_name"
+    t.string   "instructor_photo_content_type"
+    t.integer  "instructor_photo_file_size"
+    t.datetime "instructor_photo_updated_at"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -103,8 +108,14 @@ ActiveRecord::Schema.define(version: 20160711202900) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+<<<<<<< 7f2626167b0496e95d06c8f3b4c7f811105932d9
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+=======
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "admin",                  default: false
+>>>>>>> working on stuff, most of this probably doesn't work
     t.boolean  "is_admin"
     t.boolean  "is_instructor"
     t.boolean  "is_customer"

@@ -24,7 +24,7 @@ class InstructorAppsController < ApplicationController
     @instructor_app.activity_desc = instructor_app_hash['activity_desc']
     @instructor_app.activity_title = instructor_app_hash['activity_title']
     @instructor_app.why_share = params['why_share']
-    @instructor_app.picture = instructor_app_hash['picture']
+    @instructor_app.app_photo = instructor_app_hash['app_photo']
     if @instructor_app.save
       flash[:notice] = "Thank you for submitting your application!"
       #UserNotifier.send_confirmation_email.deliver_now
@@ -54,8 +54,13 @@ class InstructorAppsController < ApplicationController
     @instructor_app.unique_thing = instructor_app_hash['unique_thing']
     @instructor_app.activity_desc = instructor_app_hash['activity_desc']
     @instructor_app.activity_title = instructor_app_hash['activity_title']
+<<<<<<< 7f2626167b0496e95d06c8f3b4c7f811105932d9
     @instructor_app.why_share = params['why_share']
     @instructor_app.picture = instructor_app_hash['picture']
+=======
+    @instructor_app.why_share = instructor_app_hash['why_share']
+    @instructor_app.app_photo = instructor_app_hash['app_photo']
+>>>>>>> working on stuff, most of this probably doesn't work
   end
 
   def edit
@@ -85,8 +90,13 @@ class InstructorAppsController < ApplicationController
     @instructor_app.unique_thing = instructor_app_hash['unique_thing']
     @instructor_app.activity_desc = instructor_app_hash['activity_desc']
     @instructor_app.activity_title = instructor_app_hash['activity_title']
+<<<<<<< 7f2626167b0496e95d06c8f3b4c7f811105932d9
     @instructor_app.why_share = params['why_share']
     @instructor_app.picture = instructor_app_hash['picture']
+=======
+    @instructor_app.why_share = instructor_app_hash['why_share']
+    @instructor_app.app_photo = instructor_app_hash['app_photo']
+>>>>>>> working on stuff, most of this probably doesn't work
 
 
     if @instructor_app.save

@@ -9,6 +9,7 @@ class UserNotifier < ApplicationMailer
       subject: 'Thank you for applying! Your application has been received.'
     )
   end
+
   def send_accepted_email
     @email2 = InstructorApp.where(workflow_state: accepted).last.pluck(:email)
     @first_name2 = InstructorApp.where(workflow_state: accepted).last.pluck(:first_name)
@@ -19,6 +20,18 @@ class UserNotifier < ApplicationMailer
       subject: 'Congratulations! Your application has been accepted!'
     )
   end
+
+  def send_rejected_email
+    @email4 = InstructorApp.where(workflow_state: rejected).last.pluck(:email)
+    @first_name4 = InstructorApp.where(workflow_state: rejected).last.pluck(:first_name)
+    @last_name4 = InstructorApp.where(workflow_state: rejected).last.pluck(:last_name)
+    mail (
+      to: @email4,
+      from: 'us@quirk.com',
+      subject: 'Instructor Application at Quirk'
+    )
+  end
+
   def send_scheduling_2us
     @schedule = Schedule.last
     @email3 = User.where(id: @schedule.user_id).pluck(:email)

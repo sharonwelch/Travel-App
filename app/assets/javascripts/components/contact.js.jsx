@@ -8,8 +8,9 @@ var Contact = React.createClass({
   render: function() {
     return (
       <div>
-        <div>Name: {this.props.contactName}</div>
+        <div>{this.props.contactName}</div>
         <div>Email: {this.props.contactEmail}</div>
+        <br></br>
       </div>
     );
   }

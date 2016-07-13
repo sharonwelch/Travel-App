@@ -8,7 +8,7 @@ class InstructorsController < ApplicationController
 
   def create
     @newinstructor = Instructor.new
-    @newinstructor_app = InstructorApp.where(first_name: params['instructor']['first_name']).where(last_name: params['instructor']['last_name'])
+    @newinstructor_app = InstructorApp.where(email: params['instructor']['email'])
 
     @newinstructor.first_name = params['instructor']['first_name']
     @newinstructor.last_name = params['instructor']['last_name']
@@ -32,16 +32,22 @@ class InstructorsController < ApplicationController
     @key = []
     @array = params['instructor']['through_ats'].keys
     0.upto(@array.length) do |x|
-      @newthroughat = ThroughAt.new
-      @newthroughat.activity_id = @newactivity.id
+      # @newthroughat = ThroughAt.new
+      # @newthroughat.activity_id = @newactivity.id
       hash = params['instructor']['through_ats']
       var = hash[@array[x]]
       if var == "1"
         @key << @array[x]
       end
-      @newthroughat.tag_id = Tag.where(category: key).pluck(:id)
-      @newthroughat.save!
+      0.upto(@key.length) do |a|
+        @newthroughat = ThroughAt.new
+        @newthroughat.activity_id = @newactivity.id
+        @newthroughat.tag_id = Tag.where(category: @key[a]).pluck(:id)
+        @newthroughat.save!
+      end
     end
+    redirect_to instructors_path
+    flash[:notice] = "Congratulations! You now have an instructor page!"
   end
 
 

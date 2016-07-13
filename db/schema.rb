@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 20160712144633) do
     t.string   "duration"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.string   "availability"
     t.string   "activity_photo_file_name"
     t.string   "activity_photo_content_type"
     t.integer  "activity_photo_file_size"
     t.datetime "activity_photo_updated_at"
+    t.string   "availability"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -119,20 +119,21 @@ ActiveRecord::Schema.define(version: 20160712144633) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",             default: "", null: false
-    t.string   "last_name",              default: "", null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "first_name",             default: "",    null: false
+    t.string   "last_name",              default: "",    null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "admin",                  default: false
     t.boolean  "is_admin"
     t.boolean  "is_instructor"
     t.boolean  "is_customer"

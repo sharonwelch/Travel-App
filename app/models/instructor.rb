@@ -5,7 +5,8 @@ class Instructor < ActiveRecord::Base
   has_many :activities
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable
+        #  :validatable
   has_many :activities
   has_one :instructor_app
 

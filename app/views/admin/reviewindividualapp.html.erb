@@ -48,7 +48,7 @@
   <%= @app.activity_desc %> <br/>
   <%= @app.why_share %> <br/>
   Photos:
-  <%= @app.picture %>
+  <img src=image_url("#{@app.app_photo}")/>
   <br/>
   <%= link_to "Accept this application", accept_path, :value => "Accept", :class => "btn btn-primary btn-admin" %>
   <%= link_to "Reject this application", reject_path, :value => "Reject", :class => "btn btn-primary btn-admin" %>

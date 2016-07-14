@@ -39,8 +39,11 @@
   <% n = 0 %>
   <% @allinstructors.each do |instructor| %>
     <%= link_to "#{instructor.first_name.capitalize} #{instructor.last_name.capitalize}", "/individualinstructor/#{instructor.id}" %>
+    <br>
+    <% instructor.activities.each do |activity| %>
+        <%= activity.title.titleize %>
     <br/>
-    <%= instructor.activity_title.titleize %>
+    <% end %>
     <br/>
     <br/>
     <% n += 1 %>

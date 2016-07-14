@@ -3,7 +3,6 @@ class InstructorsController < ApplicationController
     # binding.pry
     @allinstructors = Instructor.all
     @ids = Instructor.all.pluck(:id)
-    @activity = Activity.where(instructor_id: instructor.id)
   end
 
   def create
@@ -80,7 +79,7 @@ class InstructorsController < ApplicationController
       @activity_id = Activity.where(instructor_id: id).last.id
       @reviews = Review.where(activity_id: @activity_id)
     end
-    @activity = Activity.where(instructor_id: id)
+    @activity = Activity.where(instructor_id: @instructor.id)
   end
 
   def filter

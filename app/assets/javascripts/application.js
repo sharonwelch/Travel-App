@@ -12,9 +12,7 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks
 //= require jquery.fullPage
-//= require turbolinks
 //= require react
 //= require react_ujs
 //= require components

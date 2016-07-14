@@ -38,35 +38,37 @@
     <%= @instructor.story %>
   </p>
 
-  <h2>
-    <%= @activity.title.titleize %>
-  </h2>
+    <% @activity.each do |x| %>
+    <h2>
+      <%= x.title.titleize %>
+    </h2>
 
-  <p>
-    Location: <%= @activity.location %>
-    Price: $<%= @activity.price %>
-    Duration: <%= @activity.duration %>
-    <%= @activity.description %>
-  </p>
+    <p>
+      Location: <%= x.location %>
+      Price: $<%= x.price %>
+      Duration: <%= x.duration %>
+      <%= x.description %>
+    </p>
 
-  <%= link_to "Sign up for this activity", "/activity/#{@activity_id}/signup", :class => "btn btn-default btn-review" %>
+    <%= link_to "Sign up for this activity", "/activity/#{x.id}/signup", :class => "btn btn-default btn-review" %>
 
 
-  <h2>
-    Reviews
-  </h2>
+    <h2>
+      Reviews
+    </h2>
 
-  <% @reviews.each do |review|%>
-    <%= review.rating %> stars by <%= review.first_name %> <%= review.last_name %>
+    <% @reviews.each do |review|%>
+      <%= review.rating %> stars by <%= review.first_name %> <%= review.last_name %>
+      <br>
+      <%= review.content %>
+      <br>
+      <br>
+    <% end %>
+
     <br>
-    <%= review.content %>
-    <br>
+    <%= link_to "Review #{x.title.titleize}", "/activity/#{x.id}/review/new", :class => "btn btn-default btn-review" %>
     <br>
   <% end %>
-
-  <br>
-  <%= link_to "Review #{@instructor.activity_title.titleize}", "/activity/#{@activity_id}/review/new", :class => "btn btn-default btn-review" %>
-  <br>
   <p class="back_to_instructors">
     <%= link_to "Back to All Instructors", "/instructors", class: "btn btn-default btn-back" %>
   </p>

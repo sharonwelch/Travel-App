@@ -28,13 +28,14 @@ class InstructorAppsController < ApplicationController
     if @instructor_app.save
       #UserNotifier.send_confirmation_email.deliver_now
       flash.keep[:notice] = "Thank you for submitting your application!"
+      current_user.is_instructor = true
+      current_user.save!
       redirect_to root_path
     else
       flash[:notice] = "Some fields are still blank"
       render :action => :new
     end
-    current_user.is_instructor = true
-    current_user.save!
+
   end
 
   def new

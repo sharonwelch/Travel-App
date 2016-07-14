@@ -21,7 +21,10 @@ class ApplicationController < ActionController::Base
       stored_location_for(resource_or_scope) || root_path
     elsif current_user.is_admin == true
       reviewapps_path
+    else
+      root_path
     end
+
   end
 
   # def after_sign_up_path_for(resource)

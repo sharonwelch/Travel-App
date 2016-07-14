@@ -31,6 +31,11 @@ class RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    # if params[:user_type] == "customer"
+    #   current_user.is_customer == true
+    # elsif params[:user_type] == "instructor"
+    #   current_user.is_instructor == true
+    # end
     if !:user.save
       render :action => :new
     end

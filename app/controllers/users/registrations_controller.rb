@@ -13,7 +13,7 @@ class RegistrationsController < Devise::RegistrationsController
   # private
 
   def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :user_type)
     if !params.save
       render :action => :new
     end
@@ -31,6 +31,11 @@ class RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    # if params[:user_type] == "customer"
+    #   current_user.is_customer == true
+    # elsif params[:user_type] == "instructor"
+    #   current_user.is_instructor == true
+    # end
     if !:user.save
       render :action => :new
     end
@@ -76,6 +81,10 @@ class RegistrationsController < Devise::RegistrationsController
   # def after_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def after_sign_up_path_for(resource)
+    binding.pry
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

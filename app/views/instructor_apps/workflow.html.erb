@@ -13,16 +13,17 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/users/sign_in" style="color: #323333">Log In</a></li>
         <li><a href="/users/sign_up" style="color: #323333">Sign Up</a></li>
+        <li><a href="/users/sign_out" style="color: #323333">Sign Out</a></li>
+
       </ul>
     </div>
   </div>
 </nav>
 
+<h1> Hello <%= @instructorworkflow.first_name %> <%= @instructorworkflow.last_name %>! </h1>
+<h2> Your application status: </h2>
 
-<h1> Your application status: </h1>
-
-<h3> Hello <%= @instructorworkflow.first_name %> <%= @instructorworkflow.last_name %>! </h3>
 
 We currently have many applications under review. To keep you updated during the process, here is the status of your application:
 
-<%= @instructorworkflow.workflow_state %>
+<h3> <%= @instructorworkflow.workflow_state %> </h3>

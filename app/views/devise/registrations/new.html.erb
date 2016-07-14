@@ -31,6 +31,16 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class = "field">
+    <%= label_tag(:user_type, "Please select a type of user") %>
+    <br>
+    <%= radio_button_tag(:user_type, "customer") %>
+    <%= label_tag(:user_type_customer, "Traveler") %>
+    <br>
+    <%= radio_button_tag(:user_type, "instructor") %>
+    <%= label_tag(:user_type_instructor, "Instructor") %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

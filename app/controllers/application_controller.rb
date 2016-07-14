@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   #     reviewapps_path
   #   end
   # end
+
+  def after_sign_up_path_for(resource)
+    binding.pry
+  end
 end

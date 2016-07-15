@@ -27,4 +27,11 @@ class ApplicationController < ActionController::Base
       reviewapps_path
     end
   end
+
+  def check_privileges!
+    if current_user.is_admin != true
+      redirect_to "/", notice: 'You dont have permission to be here'
+    end
+  end
+
 end

@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   before_action :authenticate_user!
+  before_filter :check_privileges!
   def reviewapps
     @newapps = InstructorApp.where(workflow_state: :new)
   end

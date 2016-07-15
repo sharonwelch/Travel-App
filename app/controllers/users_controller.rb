@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def index
-    render json: {result: "OK"}
+    redirect_to root_path
   end
 
   def show
-    render json: {result: "OK"}
+    redirect_to root_path
   end
 end

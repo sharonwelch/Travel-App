@@ -16,10 +16,6 @@ sharon = Contact.create(fullname: "Sharon Welch", email: "sharon.welch@yale.edu"
 ellis = Contact.create(fullname: "Ellis Burgoon Miskell", email: "ellis.burgoonmiskell@yale.edu", current_admin: true)
 zoe = Contact.create(fullname: "Zoe Henry", email: "zoe.henry@yale.edu", current_admin: true)
 
-sharon = User.create(first_name: "Sharon", last_name: "Welch", email: "sharon.welch@yale.edu", is_admin: true)
-ellis = User.create(first_name: "Ellis", last_name: "Burgoon Miskell", email: "ellis.burgoonmiskell@yale.edu", is_admin: true)
-zoe = User.create(first_name: "Zoe", last_name: "Henry", email: "zoe.henry@yale.edu", is_admin: true)
-
 sharon = User.new
 sharon.first_name = "Sharon"
 sharon.last_name = "Welch"

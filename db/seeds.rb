@@ -22,7 +22,27 @@ zoe = User.create(first_name: "Zoe", last_name: "Henry", email: "zoe.henry@yale.
 
 sharon = User.new
 sharon.first_name = "Sharon"
-#...
+sharon.last_name = "Welch"
+sharon.email = "sharon.welch@yale.edu"
+sharon.is_admin = true
 sharon.password = "changeme"
 sharon.password_confirmation = "changeme"
 sharon.save!
+
+ellis = User.new
+ellis.first_name = "Ellis"
+ellis.last_name = "Burgoon Miskell"
+ellis.email = "ellis.burgoonmiskell@yale.edu"
+ellis.is_admin = true
+ellis.password = "changeme"
+ellis.password_confirmation = "changeme"
+ellis.save!
+
+zoe = User.new
+zoe.first_name = "Zoe"
+zoe.last_name = "Henry"
+zoe.email = "zoe.henry@yale.edu"
+zoe.is_admin = true
+zoe.password = "changeme"
+zoe.password_confirmation = "changeme"
+zoe.save!

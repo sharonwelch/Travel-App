@@ -6,7 +6,11 @@
 .navbar-brand {
   font-size: 60px;
   padding-left: 30px;
-  color: #5ed48d;
+  color: #ff8e62;
+}
+
+.navbar-default {
+ color: #ff8e62;
 }
 
 .navbar-instructor {
@@ -19,8 +23,7 @@
   padding-bottom: 10px;
   border-radius: 5px;
   padding-right: 10px;
-  color:black;
-
+  color:#ff8e62;
 }
 
 .navbar-default {
@@ -44,6 +47,7 @@
     margin: 0;
     padding-right: 10px;
 }
+
 .instructors_sign_in {
   text-align: right;
   padding-right: 15px;
@@ -51,6 +55,11 @@
   margin-bottom: 0;
   font-size: 30px;
   padding-left: 75%;
+}
+
+img {
+  width: 30%;
+  height: auto;
 }
 
 .back_to_instructors {
@@ -123,7 +132,6 @@
   padding-top: 30px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-
 }
 
 .instructor_info, .activities {
@@ -141,11 +149,12 @@
 
 .container2 {
   background-color: white;
-  width: 90%;
+  width: 100%;
   padding-right: 30px;
-  border-radius: 10px;
-  margin-left: 30px;
+  // border-radius: 10px;
   padding-bottom: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .instructors {
@@ -169,7 +178,7 @@
 
 .instructor_name {
   padding-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 .activity_title {

@@ -7,7 +7,7 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{:href => "/", :style => "color:#323333;background-color: #eff4f6; padding: 10; padding-top:15px; border-radius: 5px"} Wanderlocal
+        %a.navbar-brand{:href => "/", :style => "color:#323333; padding: 10; padding-top:15px; border-radius: 5px"} Wanderlocal
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
           - if !current_user
@@ -17,7 +17,7 @@
               %a{:href => "/users/sign_up", :style => "color: #323333"} Sign Up
           - if current_user
             %li
-              %a{:href => "/users/sign_out", :style => "color: #323333"} Sign Out
+              = link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary sign-out-btn", :method => :delete, style: "color: #323333"
 
   %h1.application
     Apply to be a Wanderlocal Instructor

@@ -17,7 +17,8 @@
         <li><a href="/users/sign_up" style="color: #323333">Sign Up</a></li>
         <%end %>
         <% if current_user %>
-        <li><a href="/users/sign_out" style="color: #323333">Sign Out</a></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary sign-out-btn", :method => :delete, style: "color: #323333" %>
+        </li>
         <% end %>
       </ul>
     </div>
@@ -43,7 +44,7 @@
 <div class = "container">
   <% n = 0 %>
   <% @allinstructors.each do |instructor| %>
-    <%= link_to "#{instructor.first_name.capitalize} #{instructor.last_name.capitalize}", "/individualinstructor/#{instructor.id}" %>
+    <%= link_to "#{instructor.first_name.capitalize} #{instructor.last_name.capitalize}", "/individualinstructor/#{instructor.id}" %><br>
     <%= image_tag(instructor.instructor_photo.url) %>
     <br>
     <% instructor.activities.each do |activity| %>

@@ -2,7 +2,9 @@
   <div class="section intro">
     <p class="sign_in">
       <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+      <% if current_user %>
       <%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary", :method => :delete %>
+      <% end %>
     </p>
     <h1>
       <%= @name %>
@@ -18,7 +20,9 @@
   <div class="section stories">
     <p class="sign_in">
       <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+      <% if current_user %>
       <%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary", :method => :delete %>
+      <% end %>
     </p>
     <h1>
       <%= @name %>
@@ -35,7 +39,9 @@
   <div class="section apply">
     <p class="sign_in">
       <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+      <% if current_user %>
       <%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary", :method => :delete %>
+      <% end %>
     </p>
     <h2>
       <%= @name %>

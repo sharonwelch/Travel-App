@@ -5,7 +5,7 @@ class UserNotifier < ApplicationMailer
     @last_name = InstructorApp.last.pluck(:last_name)
     mail (
       to: @email1,
-      from: 'us@quirk.com',
+      from: 'us@wanderlocal.com',
       subject: 'Thank you for applying! Your application has been received.'
     )
   end
@@ -16,7 +16,7 @@ class UserNotifier < ApplicationMailer
     @last_name2 = InstructorApp.where(workflow_state: accepted).last.pluck(:last_name)
     mail (
       to: @email2,
-      from: 'us@quirk.com',
+      from: 'us@wanderlocal.com',
       subject: 'Congratulations! Your application has been accepted!'
     )
   end
@@ -27,8 +27,8 @@ class UserNotifier < ApplicationMailer
     @last_name4 = InstructorApp.where(workflow_state: rejected).last.pluck(:last_name)
     mail (
       to: @email4,
-      from: 'us@quirk.com',
-      subject: 'Instructor Application at Quirk'
+      from: 'us@wanderlocal.com',
+      subject: 'Instructor Application at Wanderlocal'
     )
   end
 
@@ -49,14 +49,14 @@ class UserNotifier < ApplicationMailer
     @instructor_firstname = Instructor.where(id: @schedule.instructor_id).pluck(:first_name)
     mail (
       to: ['zoe.henry@yale.edu', 'ellis.burgoonmiskell@yale.edu', 'sharon.welch@yale.edu'],
-      from: 'quirkscheduling@quirk.com',
+      from: 'wanderlocalscheduling@wanderlocal.com',
       subject: 'Someone wants to schedule an activity.'
     )
   end
   def send_appointment_email
     mail (
       to: #instructor.email & user.email,
-      from: 'us@quirk.com',
+      from: 'us@wanderlocal.com',
       subject: 'Your activity has been scheduled!'
     )
   end

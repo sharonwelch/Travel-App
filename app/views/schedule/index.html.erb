@@ -7,13 +7,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/" style="color: #323333">Quirk</a>
+      <a class="navbar-brand" href="/" style="color: #323333">Wanderlocal</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <% if !current_user %>
         <li><a href="/users/sign_in" style="color: #323333">Log In</a></li>
         <li><a href="/users/sign_up" style="color: #323333">Sign Up</a></li>
+        <%end %>
+        <% if current_user %>
         <li><a href="/users/sign_out" style="color: #323333">Sign Out</a></li>
+        <% end %>
       </ul>
     </div>
   </div>

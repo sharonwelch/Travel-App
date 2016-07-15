@@ -24,6 +24,7 @@
 <h1 class="instructorsh1">
   <!-- Instructor: <br> -->
   <p class = "instructor_name">
+    <%= image_tag(@instructor.instructor_photo.url) %>
     <%= @instructor.first_name.capitalize %>
     <%= @instructor.last_name.capitalize %>
   </p>
@@ -48,6 +49,7 @@
       Location: <%= x.location %>
       Price: $<%= x.price %>
       Duration: <%= x.duration %>
+      <%= image_tag(x.activity_photo.url) %>
       <%= x.description %>
     </p>
 

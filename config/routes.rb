@@ -3,8 +3,7 @@ Rails.application.routes.draw do
 
   get 'admin/index'
 
-  devise_for :controllers => {registrations: 'registrations'}
-  devise_for :users
+  devise_for :users, :controllers => {registrations: 'registrations'}
 
   resources :users
   resources :instructors

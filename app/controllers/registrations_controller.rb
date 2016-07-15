@@ -2,27 +2,6 @@ class RegistrationsController < Devise::RegistrationsController
 # before_action :configure_sign_up_params, only: [:create]
 # before_action :configure_account_update_params, only: [:update]
 
-  def sign_up_params
-    devise_parameter_sanitizer.sanitize(:sign_up)
-  end
-
-  def account_update_params
-    devise_parameter_sanitizer.sanitize(:account_update)
-  end
-
-  # private
-
-  def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
-    if !params.save
-      render :action => :new
-    end
-  end
-
-  def account_update_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
-  end
-
   # GET /resource/sign_up
   # def new
   #   super
@@ -31,14 +10,21 @@ class RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    # if params[:user_type] == "customer"
-    #   current_user.is_customer == true
-    # elsif params[:user_type] == "instructor"
-    #   current_user.is_instructor == true
-    # end
-    if !:user.save
-      render :action => :new
+    user = resource
+    if params[:user_type] == "customer"
+      user.is_customer = true
+    elsif params[:user_type] == "instructor"
+      user.is_instructor = true
     end
+    user.save!
+  end
+
+  before_filter :configure_permitted_parameters
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up).push(:user_type)
   end
 
   # GET /resource/edit

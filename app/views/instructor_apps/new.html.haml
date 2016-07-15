@@ -24,7 +24,7 @@
 
     -# change all to i.textfiled
   .p
-    = form_for(@instructor_app, url: "/instructor_apps", method: "post") do |i|
+    = form_for(@instructor_app, url: "/instructor_apps", method: "post", html: { multipart: true }) do |i|
       = label_tag(:first_name, "First Name")
       = i.text_field(:first_name)
       %br

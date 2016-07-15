@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   get 'admin/index'
 
-  devise_for :users, :controllers => {registrations: 'registrations'}
+  devise_for :users, :controllers => {registrations: 'users/registrations'}
 
-  resources :users
+  resources :users # this is the worst
+
   resources :instructors
   resources :activities
   resources :reviews

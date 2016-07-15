@@ -7,18 +7,20 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{:href => "/", :style => "color:#323333;background-color: #eff4f6; padding: 10; padding-top:15px; border-radius: 5px"} Quirk
+        %a.navbar-brand{:href => "/", :style => "color:#323333;background-color: #eff4f6; padding: 10; padding-top:15px; border-radius: 5px"} Wanderlocal
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
-          %li
-            %a{:href => "/users/sign_in", :style => "color: #323333"} Log In
-          %li
-            %a{:href => "/users/sign_up", :style => "color: #323333"} Sign Up
-          %li
-            %a{:href => "/users/sign_out", :style => "color: #323333"} Sign Out
+          - if !current_user
+            %li
+              %a{:href => "/users/sign_in", :style => "color: #323333"} Log In
+            %li
+              %a{:href => "/users/sign_up", :style => "color: #323333"} Sign Up
+          - if current_user
+            %li
+              %a{:href => "/users/sign_out", :style => "color: #323333"} Sign Out
 
   %h1.application
-    Apply to be a Quirk Instructor
+    Apply to be a Wanderlocal Instructor
   %h2.applicationdesc
     Let us know why your local experience is one to share.
 

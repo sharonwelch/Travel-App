@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+  before_action :authenticate_user!
   def reviewapps
     @newapps = InstructorApp.where(workflow_state: :new)
   end

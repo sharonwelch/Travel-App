@@ -1,4 +1,4 @@
-class RegistrationsController < Devise::RegistrationsController
+class Users::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_sign_up_params, only: [:create]
 # before_action :configure_account_update_params, only: [:update]
 
@@ -25,6 +25,16 @@ class RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up).push(:user_type)
+  end
+
+  def after_sign_up_path_for(resource)
+    if current_user.is_instructor == true
+      "/instructor_apps/new"
+    elsif current_user.is_customer == true
+      root_path
+    elsif current_user.is_admin == true
+      reviewapps_path
+    end
   end
 
   # GET /resource/edit

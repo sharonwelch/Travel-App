@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/" style="color: #323333">Wanderlocal</a>
+      <a class="navbar-brand" href="/" style="color: #ff8e62">Wanderlocal</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -28,9 +28,9 @@
 <h1 class="instructorsh1">
   <!-- Instructor: <br> -->
   <p class = "instructor_name">
-    <%= image_tag(@instructor.instructor_photo.url) %>
     <%= @instructor.first_name.capitalize %>
-    <%= @instructor.last_name.capitalize %>
+    <%= @instructor.last_name.capitalize %><br>
+    <%= image_tag(@instructor.instructor_photo.url) %>
   </p>
 </h1>
 <div class ="container2">
@@ -40,7 +40,6 @@
   </h2>
 
   <p>
-    ADD ACTUAL STORY!!!
     <%= @instructor.story %>
   </p>
 
@@ -50,10 +49,10 @@
     </h2>
 
     <p>
-      Location: <%= x.location %>
-      Price: $<%= x.price %>
-      Duration: <%= x.duration %>
-      <%= image_tag(x.activity_photo.url) %>
+      Location: <%= x.location %><br>
+      Price: $<%= x.price %><br>
+      Duration: <%= x.duration %><br>
+      <%= image_tag(x.activity_photo.url) %><br>
       <%= x.description %>
     </p>
 

@@ -1,59 +1,61 @@
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Wanderlocal</a>
+<body class="admin">
+  <nav class="navbar navbar-default navbar-static-top navbar-instructor">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" style="color: #ff8e62">Wanderlocal</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/reviewapps">New Applications</a></li>
+          <li><a href="/apps_under_review">Applications Under Review</a></li>
+          <li><a href="/acceptedapps">Accepted Applications</a></li>
+          <li><a href="/rejectedapps">Rejected Applications</a></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary sign-out-btn", :method => :delete, style: "color: #323333" %></li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/reviewapps">New Applications</a></li>
-        <li><a href="/apps_under_review">Applications Under Review</a></li>
-        <li><a href="/acceptedapps">Accepted Applications</a></li>
-        <li><a href="/rejectedapps">Rejected Applications</a></li>
-        <li><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary sign-out-btn", :method => :delete, style: "color: #323333" %></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="container">
-  <%= @app.first_name %>
-  <%= @app.last_name %>
-  <br/>
-  <%= @app.email %>
-  <br/>
-  <%=@app.phone_number %>
-  <br/>
-  Instagram Handle:
-  <%= @app.instagram_handle %><br/>
-  Blog Url:
-  <%= @app.blog_url %> <br/>
-  Facebook Url:
-  <%= @app.facebook_url %> <br/>
-  Other social media:
-  <%= @app.other_social_media %> <br/>
-  What do you love about the place you live? Why?
-  <%= @app.love_about_hometown %> <br/>
-  Tells who you are and what excites you?
-  <%= @app.who_are %> <br/>
-  What do you think is the most unique thing about you?
-  <%= @app.unique_thing %> <br/>
-  Proposed activity title:
-  <%= @app.activity_title %> <br/>
-  Describe your proposed activity and previous experience related to this activity.
-  <%= @app.activity_desc %> <br/>
-  <%= @app.why_share %> <br/>
-  Photos:
-  <%= image_tag(@app.app_photo.url) %>
-  <br/>
-  <%= link_to "Accept this application", accept_path, :value => "Accept", :class => "btn btn-primary btn-admin" %>
-  <%= link_to "Reject this application", reject_path, :value => "Reject", :class => "btn btn-primary btn-admin" %>
-
+  <div class="admincontainer">
+    <%= @app.first_name %>
+    <%= @app.last_name %>
     <br/>
-  <br/>
-</div>
+    <%= @app.email %>
+    <br/>
+    <%=@app.phone_number %>
+    <br/>
+    Instagram Handle:
+    <%= @app.instagram_handle %><br/>
+    Blog Url:
+    <%= @app.blog_url %> <br/>
+    Facebook Url:
+    <%= @app.facebook_url %> <br/>
+    Other social media:
+    <%= @app.other_social_media %> <br/>
+    What do you love about the place you live? Why?
+    <%= @app.love_about_hometown %> <br/>
+    Tells who you are and what excites you?
+    <%= @app.who_are %> <br/>
+    What do you think is the most unique thing about you?
+    <%= @app.unique_thing %> <br/>
+    Proposed activity title:
+    <%= @app.activity_title %> <br/>
+    Describe your proposed activity and previous experience related to this activity.
+    <%= @app.activity_desc %> <br/>
+    <%= @app.why_share %> <br/>
+    Photos:
+    <%= image_tag(@app.app_photo.url) %>
+    <br/>
+    <%= link_to "Accept this application", accept_path, :value => "Accept", :class => "btn btn-primary btn-admin" %>
+    <%= link_to "Reject this application", reject_path, :value => "Reject", :class => "btn btn-primary btn-admin" %>
+
+      <br/>
+    <br/>
+  </div>
+</body>

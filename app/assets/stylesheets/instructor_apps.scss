@@ -2,44 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.applications{
+.instructor_applications{
   background-image: none;
-  background-color: #e6f7ff;
+  background-color: #ebf0fa;
 }
 
 .application {
-  padding-left: 70px;
-  // background-color: #76DB9F;
-  padding-bottom: 15px;
+  padding-left: 50px;
+  background-color: white;
+  padding-bottom: 10px;
   margin-bottom: 0;
   margin-top: 0;
   text-align: left;
-  width: 80%;
-  margin-left: 50px;
   padding-top: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  // color:black;
+  color: #595959;
+  width: 900px;
+  margin-left: 50px;
 }
 
 .applicationdesc {
-  padding-left: 70px;
-  font-size: 20pt;
-  padding-top: 5px;
+  padding-left: 50px;
+  background-color: white;
   padding-bottom: 10px;
+  margin-bottom: 0;
   margin-top: 0;
-  width: 80%;
-  margin-left: 50px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-
-  // color: white;
-}
-
-form {
   text-align: left;
   padding-top: 10px;
-  padding-left: 80px;
+  margin-left: 50px;
+  color: #595959;
+  width: 900px;
+  margin-left: 50px;
+}
+
+.application_form{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: white;
+  text-align: left;
+  padding-top: 20px;
+  text-align: left;
+  padding-top: 15px;
+  width: 900px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  margin-left: 50px;
 }
 
 .btn-submit-app {
@@ -59,14 +67,4 @@ textarea {
   // resize: none;
   height: 200px;
   width: 350px;
-}
-
-form {
-  background-color: #eff4f6;
-  width: 80%;
-  margin-left: 50px;
-  border-radius: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  // opacity: .9;
 }

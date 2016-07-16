@@ -1,23 +1,32 @@
 // Place all the styles related to the Admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.admin {
+  background-color: #ebf0fa;
+  background-image: none;
+}
 
 .applications {
   padding-left: 50px;
-  // background-color: #76DB9F;
+  background-color: white;
+  background-image: none;
   padding-bottom: 20px;
   margin-bottom: 0;
   margin-top: 0;
   padding-top: 20px;
-
+  width: 80%;
+  margin-left: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-// body {
-//   background-image: none;
-// }
-
-.navbar {
-  margin-bottom: 20px;
+.admincontainer {
+  background-color: white;
+  width: 80%;
+  padding-left: 50px;
+  margin-left: 50px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .btn-admin {

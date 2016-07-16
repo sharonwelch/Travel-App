@@ -34,10 +34,9 @@
      <span class="caret"></span>
    </button>
    <ul class="dropdown-menu">
-    <li><a href="/filter/cooking">Cooking</a></li>
-    <li><a href="/filter/active">Active</a></li>
-    <li><a href="/filter/art">Art</a></li>
-    <li><a href="/filter/music">Music</a></li>
+    <% Tag.all.each do |x| %>
+      <li><a href="/filter/<%=x.category%>" ><%= x.category %></a></li>
+    <% end %>
   </ul>
 </div>
 

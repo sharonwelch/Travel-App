@@ -41,7 +41,7 @@ class InstructorsController < ApplicationController
       0.upto(@key.length) do |a|
         @newthroughat = ThroughAt.new
         @newthroughat.activity_id = @newactivity.id
-        @newthroughat.tag_id = Tag.where(category: @key[a]).pluck(:id)
+        @newthroughat.tag_id = Tag.where(category: @key[a]).pluck(:id).first
         @newthroughat.save!
       end
     end

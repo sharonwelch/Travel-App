@@ -17,7 +17,6 @@
   margin-bottom: 20px;
   background-color: #eff4f6;
   background-color: white;
-  // background-color: transparent;
   border-color: transparent;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -29,8 +28,6 @@
 .navbar-default {
   background-color: #eff4f6;
   background-color: white;
-
-
 }
 
 .alert {
@@ -69,14 +66,11 @@ img {
 .instructorsh1 {
   padding-left: 50px;
   padding-top: 20px;
-  // padding-bottom: 20px;
   margin-bottom: 0;
   margin-top: 0;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  color: #035996;
   color: #595959;
-  // color: #003366;
 }
 
 .instructorsh2 {
@@ -86,21 +80,11 @@ img {
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 15px;
-
-  color: #035996;
   color: #595959;
-
-  // color: #003366;
-
 }
-
-// .instructorsh1, .instructors_sign_in {
-//   background-color: #76DB9F;
-// }
 
 .btn-group {
   padding-left: 50px;
-
 }
 
 .btn-default {
@@ -142,7 +126,6 @@ img {
 .container, .instructorsh1,.instructorsh2, .btn-group {
   background-color: #eff4f6;
   background-color: white;
-
   width: 100%;
   padding-right: 30px;
 }
@@ -151,14 +134,12 @@ img {
   background-color: white;
   width: 100%;
   padding-right: 30px;
-  // border-radius: 10px;
   padding-bottom: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 .instructors {
-  background-color:  #fff7e6;
   background-color: #ebf0fa;
   width: 100%;
   background-image: none;
@@ -168,13 +149,6 @@ img {
   padding-right: 15px;
 
 }
-
-// .instructorsh1, .instructors_sign_in {
-//   background-color: #eff4f6;
-//
-// }
-
-
 
 .instructor_name {
   padding-top: 10px;
@@ -186,13 +160,10 @@ img {
 }
 
 .activities {
-  // background-color: white;
+  background-color: white;
   padding-bottom: 20px;
-  // padding-top: 20px;
   margin-top: 0;
   margin-bottom: 0;
-  opacity: .75;
-  border-radius: 10px;
-  width: 50%;
-  // margin-left: 50px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }

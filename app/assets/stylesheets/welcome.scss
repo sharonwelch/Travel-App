@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.intro, .apply, .stories{
+.intro, .apply, .stories, .contact{
   text-align: center;
   .sign_in {
     text-align: right;
@@ -16,7 +16,7 @@
   .fp-tableCell {
     padding-top: 35px;
     padding-bottom: 230px;
-    padding-left: 10%;
+    // padding-left: 10%;
   }
   h1 {
     text-align: left;
@@ -41,7 +41,6 @@
     text-align: center;
     opacity: .75;
   }
-
   .greeting {
     font-size: 42pt;
     border-top-left-radius: 10px;
@@ -76,7 +75,6 @@
     text-align: center;
     width: 45%;
     border-width: 4px;
-
   }
   .btn-lg {
     margin-left: auto;
@@ -92,30 +90,27 @@
     background-color: #76DB9F;
     font-size: x-large;
   }
-
   .btn-default:hover, .btn-default:active:focus {
     border-color: #00b38f;
     border-width: 4px;
     color: #00b38f;
     background-color: transparent;
-
   }
-
   .button {
     text-size: 50pt;
-
   }
-
   .btn-login {
     border-width: 3px;
     border-color:rgb(75, 191, 195);
     color: rgb(75, 191, 195);
     background-color: transparent;
   }
+  .contact_header {
+    margin-bottom: 150px;
+  }
 }
 
 body {
   background-image: url("https://images.unsplash.com/photo-1423589989400-cc0270157ed0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=74ed0669f62ce934d161079909c707d2");
   background-size: cover;
-
 }

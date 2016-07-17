@@ -69,6 +69,17 @@
   </div>
 
   <div class = "section contact">
+    <p class="sign_in">
+      <% if !current_user %>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+      <%end %>
+      <% if current_user %>
+      <%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary", :method => :delete %>
+      <% end %>
+    </p>
+    <h2 class= "contact_header" style="color: #ff8e62">
+      <%= @name %>
+    </h2>
     <a class="btn btn-primary btn-default btn-block" href="/contact_us" role="button">
       Contact Us
     </a>

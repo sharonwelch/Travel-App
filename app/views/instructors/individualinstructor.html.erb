@@ -25,67 +25,67 @@
     </div>
   </nav>
 
+  <div class="instructor_container">
+      <div class="row">
+        <div class="col-xs-4">
+          <%= image_tag(@instructor.instructor_photo.url) %>
+        </div>
+        <div class="col-xs-8">
+          <h1 class="instructorsh1">
+            <p class = "instructor_name">
+              <%= @instructor.first_name.capitalize %>
+              <%= @instructor.last_name.capitalize %><br>
+            </p>
+          </h1>
+          <div class="instructor_info">
+            <h2>
+              My Story
+            </h2>
 
-    <!-- Instructor: <br> -->
-    <div class="row">
-      <div class="col-xs-4">
-        <%= image_tag(@instructor.instructor_photo.url) %>
-      </div>
-      <div class="col-xs-8">
-        <h1 class="instructorsh1">
-          <p class = "instructor_name">
-            <%= @instructor.first_name.capitalize %>
-            <%= @instructor.last_name.capitalize %><br>
-          </p>
-        </h1>
-        <div class="instructor_info">
-          <h2>
-            My Story
-          </h2>
-
-          <p>
-            <%= @instructor.story %>
-          </p>
+            <p>
+              <%= @instructor.story %>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-xs-8">
+      <div class="row">
+        <div class="col-xs-6">
 
-      <% @activity.each do |x| %>
-      <h2>
-        <%= x.title.titleize %>
-      </h2>
-
-        Location: <%= x.location %><br>
-        Price: $<%= x.price %><br>
-        Duration: <%= x.duration %><br>
-        <%= x.description %>
-        <%= link_to "Sign up for this activity", "/activity/#{x.id}/signup", :class => "btn btn-default btn-review" %>
+        <% @activity.each do |x| %>
         <h2>
-          Reviews
+          <%= x.title.titleize %>
         </h2>
 
-        <% @reviews.each do |review|%>
-          <%= review.rating %> stars by <%= review.first_name %> <%= review.last_name %>
-          <br>
-          <%= review.content %>
-          <br>
-          <br>
-        <% end %>
+          Location: <%= x.location %><br>
+          Price: $<%= x.price %><br>
+          Duration: <%= x.duration %><br>
+          <%= x.description %><br>
+          <%= link_to "Sign up for this activity", "/activity/#{x.id}/signup", :class => "btn btn-default btn-review" %>
+          <h2>
+            Reviews
+          </h2>
 
-        <br>
-        <%= link_to "Review #{x.title.titleize}", "/activity/#{x.id}/review/new", :class => "btn btn-default btn-review" %>
-        <br>
+          <% @reviews.each do |review|%>
+            <%= review.rating %> stars by <%= review.first_name %> <%= review.last_name %>
+            <br>
+            <%= review.content %>
+            <br>
+            <br>
+          <% end %>
+
+          <br>
+          <%= link_to "Review #{x.title.titleize}", "/activity/#{x.id}/review/new", :class => "btn btn-default btn-review" %>
+          <br>
+        </div>
+        <div class = "col-xs-6" id="instructor_activity_photo">
+          <%= image_tag(x.activity_photo.url) %><br>
+        </div>
+        <% end %>
       </div>
-      <div class = "col-xs-4">
-        <%= image_tag(x.activity_photo.url) %><br>
-      </div>
-      <% end %>
+      <p class="back_to_instructors">
+        <%= link_to "Back to All Instructors", "/instructors", class: "btn btn-default btn-back" %>
+      </p>
     </div>
-    <p class="back_to_instructors">
-      <%= link_to "Back to All Instructors", "/instructors", class: "btn btn-default btn-back" %>
-    </p>
   </div>
 </body>

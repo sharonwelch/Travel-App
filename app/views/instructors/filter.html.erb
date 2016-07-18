@@ -1,45 +1,47 @@
 <body class="instructors">
 
-<nav class="navbar navbar-default navbar-static-top navbar-instructor">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/" style="color: #ff8e62">Wanderlocal</a>
+  <nav class="navbar navbar-default navbar-static-top navbar-instructor">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" style="color: #ff8e62">Wanderlocal</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <% if !current_user %>
+          <li><a href="/users/sign_in" style="color: #323333">Log In</a></li>
+          <li><a href="/users/sign_up" style="color: #323333">Sign Up</a></li>
+          <%end %>
+          <% if current_user %>
+          <li><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary sign-out-btn", :method => :delete, style: "color: #323333" %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <% if !current_user %>
-        <li><a href="/users/sign_in" style="color: #323333">Log In</a></li>
-        <li><a href="/users/sign_up" style="color: #323333">Sign Up</a></li>
-        <%end %>
-        <% if current_user %>
-        <li><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary sign-out-btn", :method => :delete, style: "color: #323333" %></li>
-        <% end %>
-      </ul>
+  </nav>
+  <div class="instructor_container">
+    <h1 class="instructorsh3">Activities Sorted by <%= @category.titleize %></h1>
+    <div class="row">
+      <div class="col-xs-4">
+          <% @activities.each do |activity| %>
+          <h3 class="activity_title">
+            <%= activity.title.titleize %>
+            <%= image_tag(activity.activity_photo.url) %>
+          </h3>
+
+          <%= link_to "Read More", "/individualinstructor/#{activity.instructor_id}" %>
+          <br>
+          <br>
+          <% end %>
+        <p class="back_to_instructors">
+          <%= link_to "Back to All Instructors", "/instructors", class: "btn btn-default btn-back" %>
+        </p>
+      </div>
     </div>
   </div>
-</nav>
-
-<h1 class="instructorsh1">Activities Sorted by <%= @category.titleize %></h1>
-<div class= "activities">
-  <% @activities.each do |activity| %>
-  <h3 class="activity_title">
-    <%= activity.title.titleize %>
-    <%= image_tag(activity.activity_photo.url) %>
-  </h3>
-
-  <%= link_to "Read More", "/individualinstructor/#{activity.instructor_id}" %>
-  <br>
-  <br>
-  <% end %>
-
-  <p class="back_to_instructors">
-    <%= link_to "Back to All Instructors", "/instructors", class: "btn btn-default btn-back" %>
-  </p>
-</div>
 </body>

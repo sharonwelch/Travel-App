@@ -1,6 +1,7 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// http://pastebin.com/KHAWYA55
 
 .intro, .apply, .stories, .contact{
   text-align: center;
@@ -58,20 +59,29 @@
     margin-right: auto;
   }
   .browse {
+// This height + (padding * 2) = 80px
+.homepage-header {
+  position:fixed;
+  height: 70px;
+  display: block;
+  width: 100%;
+  z-index: 9;
+  text-align: center;
+  padding: 5px; // top & bottom = 5 + 5 = 10px
+}
+  .logo {
+    color: #ff8e62;
     font-size: 30pt;
-    border-radius: 10px;
-    width: 70%;
-    margin-left: 15%;
-    margin-right: auto;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    margin-left: 30px;
+    margin-top: 0px;
   }
-  .apply, .sign_up {
-    font-size: 25pt;
-    border-radius: 10px;
-    color: white;
+  .login {
+    // text-align: right;
+    padding-right: 30px;
+    padding-top: 0px;
+    margin-top: 7px;
   }
-  .btn-block {
+  .intro, .apply, .contact{
     text-align: center;
     width: 45%;
     border-width: 4px;
@@ -110,7 +120,31 @@
   }
 }
 
-body {
-  background-image: url("https://images.unsplash.com/photo-1423589989400-cc0270157ed0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=74ed0669f62ce934d161079909c707d2");
+.intro {
+  font-family: calibri;
+  font-size: 30pt;
+  font-weight: bold;
+  background-image: url("tai_chi.png");
   background-size: cover;
+
+  .intro_info {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
+
+.apply {
+  background-image: url("plant_talking_instructor.png");
+  background-size: cover;
+  .apply_content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+.contact {
+  background-image: url("beach_walk.png");
+  background-size: cover;
+  .contact_content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }

@@ -36,8 +36,8 @@ class AdminController < ApplicationController
       @app.save!
 
       @acceptedapps = InstructorApp.where(workflow_state: :accepted)
-      redirect_to acceptedapps_path
       flash[:notice] = @app.first_name + " " + @app.last_name + "'s application was just accepted!"
+      redirect_to acceptedapps_path
       #UserNotifier.send_accepted_email.deliver_now
     end
   end
@@ -52,8 +52,8 @@ class AdminController < ApplicationController
       @app.save!
 
       @rejectedapps = InstructorApp.where(workflow_state: :rejected)
-      redirect_to rejectedapps_path
       flash[:notice] = @app.first_name + " " + @app.last_name + "'s application was just rejected :("
+      redirect_to rejectedapps_path
       #UserNotifier.send_rejected_email.deliver_now
     end
   end

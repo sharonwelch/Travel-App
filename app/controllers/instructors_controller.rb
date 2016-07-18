@@ -45,8 +45,8 @@ class InstructorsController < ApplicationController
         @newthroughat.save!
       end
     end
+    flash.keep[:notice] = "Congratulations! You now have an instructor page!"
     redirect_to instructors_path
-    flash[:notice] = "Congratulations! You now have an instructor page!"
   end
 
 
@@ -73,8 +73,8 @@ class InstructorsController < ApplicationController
     id = params[:id]
     @instructor = Instructor.where(id: id).first
     if Activity.where(instructor_id: id).length == 0
-      redirect_to instructors_path
       flash[:notice] = "This instructor currently does not have any activities available."
+      redirect_to instructors_path
     else
       @activity_id = Activity.where(instructor_id: id).last.id
       @reviews = Review.where(activity_id: @activity_id)

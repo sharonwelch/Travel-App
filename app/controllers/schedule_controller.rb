@@ -23,7 +23,6 @@ class ScheduleController < ApplicationController
     @schedule.activity_id = @scheduling[:activity_id].strftime("%A, %m/%d/%y, %I:%M%p -04:00 EST")
     @schedule.instructor_id = @scheduling[:instructor_id].strftime("%A, %m/%d/%y, %I:%M%p -04:00 EST")
     @schedule.user_id = @scheduling[:user_id]
-    binding.pry
     @schedule.save!
 
     flash[:notice] = "Your activity will be scheduled soon!"

@@ -27,8 +27,8 @@ class InstructorAppsController < ApplicationController
     @instructor_app.app_photo = instructor_app_hash['app_photo']
     if @instructor_app.save
       #UserNotifier.send_confirmation_email.deliver_now
+      flash.keep[:notice] = "Thank you for submitting your application!"
       redirect_to root_path
-      flash[:notice] = "Thank you for submitting your application!"
     else
       flash[:notice] = "Some fields are still blank"
       render :action => :new

@@ -1,83 +1,91 @@
 <body class="instructors">
 
-<nav class="navbar navbar-default navbar-static-top navbar-instructor">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/" style="color: #ff8e62">Wanderlocal</a>
+  <nav class="navbar navbar-default navbar-static-top navbar-instructor">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" style="color: #ff8e62">Wanderlocal</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <% if !current_user %>
+          <li><a href="/users/sign_in" style="color: #323333">Log In</a></li>
+          <li><a href="/users/sign_up" style="color: #323333">Sign Up</a></li>
+          <%end %>
+          <% if current_user %>
+          <li><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary sign-out-btn", :method => :delete, style: "color: #323333" %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <% if !current_user %>
-        <li><a href="/users/sign_in" style="color: #323333">Log In</a></li>
-        <li><a href="/users/sign_up" style="color: #323333">Sign Up</a></li>
-        <%end %>
-        <% if current_user %>
-        <li><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary sign-out-btn", :method => :delete, style: "color: #323333" %></li>
+  </nav>
+
+
+    <!-- Instructor: <br> -->
+    <div class="row">
+      <div class="col-xs-4">
+        <%= image_tag(@instructor.instructor_photo.url) %>
+      </div>
+      <div class="col-xs-8">
+        <h1 class="instructorsh1">
+          <p class = "instructor_name">
+            <%= @instructor.first_name.capitalize %>
+            <%= @instructor.last_name.capitalize %><br>
+          </p>
+        </h1>
+        <div class="instructor_info">
+          <h2>
+            My Story
+          </h2>
+
+          <p>
+            <%= @instructor.story %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-8">
+
+      <% @activity.each do |x| %>
+      <h2>
+        <%= x.title.titleize %>
+      </h2>
+
+        Location: <%= x.location %><br>
+        Price: $<%= x.price %><br>
+        Duration: <%= x.duration %><br>
+        <%= x.description %>
+        <%= link_to "Sign up for this activity", "/activity/#{x.id}/signup", :class => "btn btn-default btn-review" %>
+        <h2>
+          Reviews
+        </h2>
+
+        <% @reviews.each do |review|%>
+          <%= review.rating %> stars by <%= review.first_name %> <%= review.last_name %>
+          <br>
+          <%= review.content %>
+          <br>
+          <br>
         <% end %>
-      </ul>
+
+        <br>
+        <%= link_to "Review #{x.title.titleize}", "/activity/#{x.id}/review/new", :class => "btn btn-default btn-review" %>
+        <br>
+      </div>
+      <div class = "col-xs-4">
+        <%= image_tag(x.activity_photo.url) %><br>
+      </div>
+      <% end %>
     </div>
-  </div>
-</nav>
-
-<h1 class="instructorsh1">
-  <!-- Instructor: <br> -->
-  <p class = "instructor_name">
-    <%= @instructor.first_name.capitalize %>
-    <%= @instructor.last_name.capitalize %><br>
-    <%= image_tag(@instructor.instructor_photo.url) %>
-  </p>
-</h1>
-<div class ="container2">
-<div class="instructor_info">
-  <h2>
-    My Story
-  </h2>
-
-  <p>
-    <%= @instructor.story %>
-  </p>
-
-    <% @activity.each do |x| %>
-    <h2>
-      <%= x.title.titleize %>
-    </h2>
-
-    <p>
-      Location: <%= x.location %><br>
-      Price: $<%= x.price %><br>
-      Duration: <%= x.duration %><br>
-      <%= image_tag(x.activity_photo.url) %><br>
-      <%= x.description %>
+    <p class="back_to_instructors">
+      <%= link_to "Back to All Instructors", "/instructors", class: "btn btn-default btn-back" %>
     </p>
-
-    <%= link_to "Sign up for this activity", "/activity/#{x.id}/signup", :class => "btn btn-default btn-review" %>
-
-
-    <h2>
-      Reviews
-    </h2>
-
-    <% @reviews.each do |review|%>
-      <%= review.rating %> stars by <%= review.first_name %> <%= review.last_name %>
-      <br>
-      <%= review.content %>
-      <br>
-      <br>
-    <% end %>
-
-    <br>
-    <%= link_to "Review #{x.title.titleize}", "/activity/#{x.id}/review/new", :class => "btn btn-default btn-review" %>
-    <br>
-  <% end %>
-  <p class="back_to_instructors">
-    <%= link_to "Back to All Instructors", "/instructors", class: "btn btn-default btn-back" %>
-  </p>
-</div>
-</div>
+  </div>
 </body>

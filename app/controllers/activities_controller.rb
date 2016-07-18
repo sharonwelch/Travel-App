@@ -29,8 +29,8 @@ class ActivitiesController < ApplicationController
     @through_at.activity_id = @complete_activity.id
     @through_at.save!
 
-    redirect_to instructors_path
     flash[:notice] = "Congrats on having an instructor page!"
+    redirect_to instructors_path
   end
 
   def update

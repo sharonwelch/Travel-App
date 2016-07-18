@@ -29,34 +29,70 @@
   <p class="schedule">Please provide upto three possible time blocks so that we can coodinate with the instructor.</p>
   <%= form_for @activity_id do |f|%>
     <div class="schedule_container">
-    <%= label_tag(:possible_start_1, "Start Time:") %>
-    <%= f.datetime_local_field :possible_start_1 %>
-    <br>
-    <%= label_tag(:possible_end_1, "End Time:") %>
-    <%= f.datetime_local_field :possible_end_1 %>
-    <br>
-    <br>
-    <%= label_tag(:possible_start_2, "Start Time:") %>
-    <%= f.datetime_local_field :possible_start_2 %>
-    <br>
-    <%= label_tag(:possible_end_2, "End Time:") %>
-    <%= f.datetime_local_field :possible_end_2 %>
-    <br>
-    <br>
-    <%= label_tag(:possible_start_3, "Start Time:") %>
-    <%= f.datetime_local_field :possible_start_3 %>
-    <br>
-    <%= label_tag(:possible_end_3, "End Time:") %>
-    <%= f.datetime_local_field :possible_end_3 %><br>
-    <br>
+      <div class="row">
+        <div class='col-sm-4'>
+            <%= label_tag(:possible_start_1, "Start Time:") %>
+            <div class='input-group date' id="possible_start_1">
+              <%= f.datetime_local_field :possible_start_1 %>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+            <br>
+            <%= label_tag(:possible_end_1, "End Time:") %>
+            <div class='input-group date' id="possible_end_1">
+              <%= f.datetime_local_field :possible_end_1 %>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+            <br>
+            <br>
+            <%= label_tag(:possible_start_2, "Start Time:") %>
+            <div class='input-group date' id="possible_start_2">
+              <%= f.datetime_local_field :possible_start_2 %>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+            <br>
+            <%= label_tag(:possible_end_2, "End Time:") %>
+            <div class='input-group date' id="possible_end_2">
+              <%= f.datetime_local_field :possible_end_2 %>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+            <br>
+            <br>
+            <%= label_tag(:possible_start_3, "Start Time:") %>
+            <div class='input-group date' id="possible_start_3">
+              <%= f.datetime_local_field :possible_start_3 %>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+            <br>
+            <%= label_tag(:possible_end_3, "End Time:") %>
+            <div class='input-group date' id="possible_end_3">
+              <%= f.datetime_local_field :possible_end_3 %><br>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+            <br>
+            <br>
+            <%= f.hidden_field :activity_id, :value => @activity_id %>
+            <%= f.hidden_field :instructor_id, :value => @instructor_id %>
+            <%= f.hidden_field :user_id, :value => @user_id %>
 
-    <br>
-    <%= f.hidden_field :activity_id, :value => @activity_id %>
-    <%= f.hidden_field :instructor_id, :value => @instructor_id %>
-    <%= f.hidden_field :user_id, :value => @user_id %>
-
-    <%= submit_tag("Submit", :class => "btn btn-default btn-submit-app") %>
-    <%= link_to "Back to Instructor Page", "/individualinstructor/#{@instructor_id}", :class => "btn btn-default btn-submit-app" %>
-  </div>
+            <%= submit_tag("Submit", :class => "btn btn-default btn-submit-app", :value => "Submit") %>
+            &nbsp;
+            <br>
+            <br>
+            <%= link_to "Back to Instructor Page", "/individualinstructor/#{@instructor_id}", :class => "btn btn-default btn-submit-app" %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </body>

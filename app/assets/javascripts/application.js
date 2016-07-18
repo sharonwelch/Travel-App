@@ -15,5 +15,7 @@
 //= require jquery.fullPage
 //= require react
 //= require react_ujs
+//= require moment
+//= require bootstrap-datetimepicker
 //= require components
 //= require_tree .

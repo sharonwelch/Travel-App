@@ -31,7 +31,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if current_user.is_instructor == true
       "/instructor_apps/new"
     elsif current_user.is_customer == true
-      root_path
+      stored_location_for(resources) || root_path
     elsif current_user.is_admin == true
       reviewapps_path
     end

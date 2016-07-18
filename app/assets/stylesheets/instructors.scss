@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .navbar-brand {
   font-size: 60px;
   padding-left: 30px;
@@ -55,7 +54,7 @@
 }
 
 img {
-  width: 30%;
+  width: 100%;
   height: auto;
 }
 
@@ -71,6 +70,7 @@ img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   color: #595959;
+  width: 500px;
 }
 
 .instructorsh2 {
@@ -85,6 +85,7 @@ img {
 
 .btn-group {
   padding-left: 50px;
+  width: 500px;
 }
 
 .btn-default {
@@ -116,6 +117,8 @@ img {
   padding-top: 30px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  width: 500px;
+  // margin-left: 0;
 }
 
 .instructor_info, .activities {
@@ -124,20 +127,21 @@ img {
 }
 
 .container, .instructorsh1,.instructorsh2, .btn-group {
-  background-color: #eff4f6;
+  // background-color: #eff4f6;
   background-color: white;
   width: 100%;
   padding-right: 30px;
 }
 
-.container2 {
-  background-color: white;
-  width: 100%;
-  padding-right: 30px;
-  padding-bottom: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
+// .container2 {
+//   background-color: white;
+//   // width: 100%;
+//   padding-right: 30px;
+//   padding-bottom: 10px;
+//   border-bottom-left-radius: 10px;
+//   border-bottom-right-radius: 10px;
+//   margin-bottom: 10px;
+// }
 
 .instructors {
   background-color: #ebf0fa;
@@ -147,7 +151,6 @@ img {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-
 }
 
 .instructor_name {
@@ -155,15 +158,26 @@ img {
   margin-bottom: 0px;
 }
 
-.activity_title {
-  font-size: 20pt;
+// .activity_title {
+//   font-size: 20pt;
+// }
+
+// .activities {
+//   background-color: white;
+//   padding-bottom: 20px;
+//   margin-top: 0;
+//   margin-bottom: 0;
+//   border-bottom-left-radius: 10px;
+//   border-bottom-right-radius: 10px;
+// }
+
+.col-xs-6 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
 }
 
-.activities {
-  background-color: white;
-  padding-bottom: 20px;
-  margin-top: 0;
-  margin-bottom: 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+.col-xs-4 {
+  padding-top: 30px;
+  padding-right: 40px;
 }

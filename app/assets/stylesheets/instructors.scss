@@ -83,6 +83,17 @@ img {
   color: #595959;
 }
 
+.instructorsh3 {
+  padding-top: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #595959;
+  width: 500px;
+}
+
+
 .btn-group {
   padding-left: 50px;
   width: 500px;
@@ -179,4 +190,20 @@ img {
 
 .col-xs-8 {
   padding-top: 30px;
+}
+
+.instructor_container {
+  color: #595959;
+  border-radius: 10px;
+  background-color: white;
+  text-align: left;
+  padding-top: 20px;
+  text-align: left;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  #instructor_activity_photo {
+    padding-right: 65px;
+    padding-top: 30px;
+  }
 }

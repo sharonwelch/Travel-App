@@ -2,21 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.intro, .apply, .stories, .contact{
+.homepage-header {
+  position:fixed;
+  height: 70px;
+  display: block;
+  width: 100%;
+  z-index: 9;
+  text-align: center;
+  padding: 5px; // top & bottom = 5 + 5 = 10px
+}
+
+.logo {
+  color: #ff8e62;
+  margin-left: 30px;
+  margin-top: 0px;
+  font-size: 35pt;
+}
+
+.login {
+  margin-right: 30px;
+  margin-top: 7px;
+}
+
+.intro, .apply, .contact{
   text-align: center;
   .sign_in {
     text-align: right;
     padding-right: 60px;
+
   }
   .intro {
     font-family: calibri;
     font-size: 20pt;
     text-color: white;
-  }
-  .fp-tableCell {
-    padding-top: 35px;
-    padding-bottom: 230px;
-    // padding-left: 10%;
   }
   h1 {
     text-align: left;
@@ -43,33 +61,31 @@
   }
   .greeting {
     font-size: 42pt;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
   .mission_statement{
-    font-size: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    font-size: 25px;
+    border-radius: 10px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
-  .browse {
-    font-size: 30pt;
-    border-radius: 10px;
-    width: 70%;
-    margin-left: 15%;
-    margin-right: auto;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  .apply, .sign_up {
+  // .browse {
+  //   font-size: 30pt;
+  //   border-radius: 10px;
+  //   width: 70%;
+  //   margin-left: 15%;
+  //   margin-right: auto;
+  //   padding-top: 15px;
+  //   padding-bottom: 15px;
+  // }
+  .apply-as-a-local, .sign_up {
     font-size: 25pt;
-    border-radius: 10px;
     color: white;
+    border-radius: 10px;
   }
   .btn-block {
     text-align: center;
@@ -110,7 +126,32 @@
   }
 }
 
-body {
-  background-image: url("https://images.unsplash.com/photo-1423589989400-cc0270157ed0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=74ed0669f62ce934d161079909c707d2");
-  background-size: cover;
+.intro {
+   font-family: calibri;
+   font-size: 30pt;
+   font-weight: bold;
+   background-image: url("tai_chi.png");
+   background-size: cover;
+
+   .intro_info {
+     margin-top: 15px;
+     margin-bottom: 15px;
+   }
+  }
+
+ .apply {
+   background-image: url("plant_talking.png");
+   background-size: cover;
+   .apply_content {
+     margin-top: 20px;
+     margin-bottom: 20px;
+   }
+ }
+ .contact {
+   background-image: url("beach_walking.png");
+   background-size: cover;
+   .contact_content {
+     margin-top: 20px;
+     margin-bottom: 20px;
+   }
 }

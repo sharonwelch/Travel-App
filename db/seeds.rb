@@ -6,11 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-cooking = Tag.create(category: "cooking")
+active = Tag.create(category: "active")
+architecture = Tag.create(category: "architecture")
 art = Tag.create(category: "art")
+cooking = Tag.create(category: "cooking")
+food = Tag.create(category: "food")
 music = Tag.create(category: "music")
 outdoors = Tag.create(category: "outdoors")
-food = Tag.create(category: "food")
+tour = Tag.create(category: "tour")
+
+
 
 sharon = Contact.create(fullname: "Sharon Welch", email: "sharon.welch@yale.edu", current_admin: true)
 ellis = Contact.create(fullname: "Ellis Burgoon Miskell", email: "ellis.burgoonmiskell@yale.edu", current_admin: true)

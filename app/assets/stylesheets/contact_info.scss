@@ -1,3 +1,29 @@
 // Place all the styles related to the ContactInfo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.contact {
+  background-color: #ebf0fa;
+  background-image: none;
+}
+
+.contact_container {
+  color: #595959;
+  border-radius: 10px;
+  background-color: white;
+  text-align: left;
+  padding-top: 20px;
+  text-align: left;
+  padding-top: 15px;
+  width: 700px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  margin-left: 10px;
+}
+
+.contactheader {
+  padding-bottom: 0;
+}
+
+.contactlist {
+  padding-top: 0;
+}

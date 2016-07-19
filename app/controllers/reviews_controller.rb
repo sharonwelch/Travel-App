@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @instructor_id = review_hash['instructor_id'].to_i
     @review.save!
     flash[:notice] = "Thank you for submitting your review!"
-    redirect_to "individualinstructor/#{@instructor_id}"
+    redirect_to "/individualinstructor/#{@instructor_id}"
   end
 
   def new

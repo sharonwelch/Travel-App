@@ -130,7 +130,7 @@
    font-family: calibri;
    font-size: 30pt;
    font-weight: bold;
-   background-image: url("ellis.png");
+   background-image: image-url("ellis.png");
    background-size: cover;
 
    .intro_info {
@@ -140,7 +140,7 @@
   }
 
  .apply {
-   background-image: url("plant_talking.png");
+   background-image: image-url("plant_talking.png");
    background-size: cover;
    .apply_content {
      margin-top: 20px;
@@ -148,7 +148,7 @@
    }
  }
  .contact {
-   background-image: url("beach_walking.png");
+   background-image: image-url("beach_walking.png");
    background-size: cover;
    .contact_content {
      margin-top: 20px;

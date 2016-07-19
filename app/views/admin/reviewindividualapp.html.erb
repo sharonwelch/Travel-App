@@ -22,6 +22,8 @@
     </div>
   </nav>
 
+  <h1 class="applications"><%=@app.first_name%> <%=@app.last_name%>'s applications</h1>
+
   <div class="admincontainer">
     <%= @app.first_name %>
     <%= @app.last_name %>
@@ -50,10 +52,12 @@
     <%= @app.activity_desc %> <br/>
     <%= @app.why_share %> <br/>
     Photos:
+    <div class="indiv_photo">
     <%= image_tag(@app.app_photo.url) %>
+    </div>
     <br/>
-    <%= link_to "Accept this application", accept_path, :value => "Accept", :class => "btn btn-primary btn-admin" %>
-    <%= link_to "Reject this application", reject_path, :value => "Reject", :class => "btn btn-primary btn-admin" %>
+    <%= link_to "Accept this application", "/accept/#{params[:id]}", :value => "Accept", :class => "btn btn-primary btn-admin" %>
+    <%= link_to "Reject this application", "/reject/#{params[:id]}", :value => "Reject", :class => "btn btn-primary btn-admin" %>
 
       <br/>
     <br/>

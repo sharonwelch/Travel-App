@@ -1,57 +1,86 @@
-<h1>Congratulations! Please verify the following information</h1>
-<h2>Information you fill out here will be displayed on your instructor profile page.</h2>
-<p>Please give us your story; a paragraph or two about yourself, your activity, and why you want to share this with visitors to your town. </p>
+<body class="instructors">
+  <nav class="navbar navbar-default navbar-static-top navbar-instructor">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" style="color: #ff8e62">Wanderlocal</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <% if !current_user %>
+          <li><a href="/users/sign_in" style="color: #323333">Log In</a></li>
+          <li><a href="/users/sign_up" style="color: #323333">Sign Up</a></li>
+          <%end %>
+          <% if current_user %>
+          <li><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-primary sign-out-btn", :method => :delete, style: "color: #323333" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="instructor_container">
+    <h1>Congratulations! Please verify the following information</h1>
+    <h2>Information you fill out here will be displayed on your instructor profile page.</h2>
+    <p>Please give us your story; a paragraph or two about yourself, your activity, and why you want to share this with visitors to your town. </p>
 
-<%= form_for @newinstructor do |f|%>
-  <%= label_tag(:first_name, "First name:") %>
-  <%= f.text_field :first_name %><br>
-  <%= label_tag(:last_name, "Last name:") %>
-  <%= f.text_field :last_name %><br>
-  <%= label_tag(:email, "Email (please use the same email as in your application):") %>
-  <%= f.text_field :email %><br>
-  <br>
-  <%= label_tag(:story, "Please write a final version of your story") %><br>
-  <%= f.text_area :story %>
-  <%= label_tag(:instructor_photo, "Please attach a photo of yourself. (It will be displayed on your instuctor page.)") %>
-  <%= f.file_field :instructor_photo %>
-  <br>
-  <%= f.hidden_field :email, :value => @email %>
-  <%= f.hidden_field :phone, :value => @phone %>
-  <%= f.hidden_field :instructor_apps_id, :value => @instructor_apps_id %>
+    <%= form_for @newinstructor do |f|%>
+      <%= label_tag(:first_name, "First name:") %>
+      <%= f.text_field :first_name %><br>
+      <%= label_tag(:last_name, "Last name:") %>
+      <%= f.text_field :last_name %><br>
+      <%= label_tag(:email, "Email (please use the same email as in your application):") %>
+      <%= f.text_field :email %><br>
+      <br>
+      <%= label_tag(:story, "Please write a final version of your story") %><br>
+      <%= f.text_area :story %><br>
+      <%= label_tag(:instructor_photo, "Please attach a photo of yourself. (It will be displayed on your instuctor page.)") %>
+      <%= f.file_field :instructor_photo %>
+      <br>
+      <%= f.hidden_field :email, :value => @email %>
+      <%= f.hidden_field :phone, :value => @phone %>
+      <%= f.hidden_field :instructor_apps_id, :value => @instructor_apps_id %>
 
-  <%= f.fields_for @newactivity do |activity_field| %>
-    <%= activity_field.hidden_field :instructor_id, :value => @instructor_id %>
+      <%= f.fields_for @newactivity do |activity_field| %>
+        <%= activity_field.hidden_field :instructor_id, :value => @instructor_id %>
 
-    <%= label_tag(:title, "Title of Activity") %>
-    <%= activity_field.text_field :title, :value => @title %><br>
+        <%= label_tag(:title, "Title of Activity") %>
+        <%= activity_field.text_field :title, :value => @title %><br>
 
-    <%= label_tag(:description, "Describe your activity:") %><br>
-    <%= activity_field.text_area :description %><br>
+        <%= label_tag(:description, "Describe your activity:") %><br>
+        <%= activity_field.text_area :description %><br>
 
-    <%= label_tag(:location, "Where will your activity be located?")%>
-    <%= activity_field.text_field :location%><br>
+        <%= label_tag(:location, "Where will your activity be located?")%>
+        <%= activity_field.text_field :location%><br>
 
-    <%= label_tag(:duration, "What is your planned duration of this activity?") %>
-    <%= activity_field.text_field :duration %><br>
+        <%= label_tag(:duration, "What is your planned duration of this activity?") %>
+        <%= activity_field.text_field :duration %><br>
 
-    <%= label_tag(:activity_photo, "Please submit any of your photos related to this activity.") %>
-    <%= file_field_tag(:activity_photo) %><br>
-  <% end %>
+        <%= label_tag(:activity_photo, "Please submit any of your photos related to this activity.") %>
+        <%= file_field_tag(:activity_photo) %><br>
+      <% end %>
 
-  <%= f.fields_for :through_ats do |tag_field| %>
-    <%= label_tag("Please check off the categories your activity fits into.") %><br>
-    <%= label_tag(:tag, "Cooking") %>
-    <%= tag_field.check_box(:cooking) %>
-    <%= label_tag(:tag, "Art") %>
-    <%= tag_field.check_box(:art) %>
-    <%= label_tag(:tag, "Music") %>
-    <%= tag_field.check_box(:music) %>
-    <%= label_tag(:tag, "Outdoors") %>
-    <%= tag_field.check_box(:outdoors) %>
-    <%= label_tag(:tag, "Food") %>
-    <%= tag_field.check_box(:food) %>
-  <% end %>
+      <%= f.fields_for :through_ats do |tag_field| %>
+        <%= label_tag("Please check off the categories your activity fits into.") %><br>
+        <%= label_tag(:tag, "Cooking") %>
+        <%= tag_field.check_box(:cooking) %>
+        <%= label_tag(:tag, "Art") %>
+        <%= tag_field.check_box(:art) %>
+        <%= label_tag(:tag, "Music") %>
+        <%= tag_field.check_box(:music) %>
+        <%= label_tag(:tag, "Outdoors") %>
+        <%= tag_field.check_box(:outdoors) %>
+        <%= label_tag(:tag, "Food") %>
+        <%= tag_field.check_box(:food) %>
+      <% end %>
 
-<%= f.submit %>
+    <%= f.submit %>
 
-<% end %>
+    <% end %>
+  </div>
+</body>
+>>>>>>> lots of testing and i fixed some things, not actually sure what anymore cause i'm really tired

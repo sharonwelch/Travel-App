@@ -107,6 +107,7 @@
   .button {
     text-size: 50pt;
   }
+
   .btn-login {
     border-width: 3px;
     border-color:rgb(75, 191, 195);
@@ -116,6 +117,13 @@
   .contact_header {
     margin-bottom: 150px;
   }
+}
+
+#login {
+  color: #324e4e;
+  border-color: #c1d7d7;
+  background-color: #c1d7d7;
+  opacity: .9;
 }
 
 .intro {

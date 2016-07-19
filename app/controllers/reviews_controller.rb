@@ -10,16 +10,17 @@ class ReviewsController < ApplicationController
     @review.rating = review_hash['rating']
     @review.content = review_hash['content']
     @review.activity_id = review_hash['activity_id']
+    @instructor_id = review_hash['instructor_id']
     @review.save!
 
     flash[:notice] = "Thank you for submitting your review!"
-    redirect_to 'individualinstructor/#{id}'
-
+    redirect_to "individualinstructor/#{@instructor_id}"
   end
 
   def new
     @review = Review.new
     @activity_id = params[:activity_id]
+    @instructor_id = Activity.where(id: @activity_id).pluck(:instructor_id).first
 
   end
 

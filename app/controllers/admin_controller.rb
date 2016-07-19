@@ -26,7 +26,7 @@ class AdminController < ApplicationController
   end
 
   def accept
-    @id = InstructorApp.where(workflow_state: :being_reviewed).pluck(:id).uniq
+    @id = params[:id]
     if @id.length == 0
       # redirect_to noapps_path
       redirect_to apps_under_review_path
@@ -43,7 +43,7 @@ class AdminController < ApplicationController
   end
 
   def reject
-    @id = InstructorApp.where(workflow_state: :being_reviewed).pluck(:id).uniq
+    @id = params[:id]
     if @id.length == 0
       redirect_to noapps_path
     else

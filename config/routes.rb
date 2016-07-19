@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   post '/reviewapp/:id', to: 'admin#reviewindividualapp'
   post '/instructor_app', to: "instructor_apps#create"
   get '/applicationworkflow/:id', to: "instructor_apps#workflow"
-  get '/accept', to: 'admin#accept'
-  get '/reject', to: 'admin#reject'
+  get '/accept/:id', to: 'admin#accept'
+  get '/reject/:id', to: 'admin#reject'
   get '/reviewapps', to: 'admin#reviewapps'
   get '/noapps', to: 'admin#noapps'
   get '/apps_under_review', to: 'admin#being_reviewed'
@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get '/acceptedapps', to: 'admin#acceptedapps'
   get '/rejectedapps', to: 'admin#rejectedapps'
   get '/activity/:activity_id/review/new', to: 'reviews#new'
+  post '/activity/:activity_id/review/new', to: 'reviews#new'
   get '/:instructor_id/activity/new', to: 'activities#new'
   get '/activity/:activity_id/signup', to: 'schedule#index'
   post '/activity/:activity_id/signup', to: 'schedule#create'
@@ -36,14 +37,6 @@ Rails.application.routes.draw do
 
   get '/contact_us' => 'contact_info#index'
   post '/contact_us' => 'contact_info#index'
-  # @instructor_intro = InstructorApp.all
-  # @instructor_intro.each do |a|
-  #   get '/instructor_profile/#{a}', to: 'welcome#instructor_profile'
-  # end
-  # get '/instructor_profile/:id', to: 'instructor_apps#activity'
-  # get '/instructor_apps/new', to: 'instructor_apps#new'
-  # get '/stories', to: 'welcome#stories'
-  # get '/user_profile', to: 'welcome#user_profile'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

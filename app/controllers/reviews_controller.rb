@@ -10,9 +10,8 @@ class ReviewsController < ApplicationController
     @review.rating = review_hash['rating']
     @review.content = review_hash['content']
     @review.activity_id = review_hash['activity_id']
-    @instructor_id = review_hash['instructor_id']
+    @instructor_id = review_hash['instructor_id'].to_i
     @review.save!
-
     flash[:notice] = "Thank you for submitting your review!"
     redirect_to "individualinstructor/#{@instructor_id}"
   end

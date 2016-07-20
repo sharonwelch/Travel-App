@@ -66,16 +66,22 @@
 
       <%= f.fields_for :through_ats do |tag_field| %>
         <%= label_tag("Please check off the categories your activity fits into.") %><br>
-        <%= label_tag(:tag, "Cooking") %>
-        <%= tag_field.check_box(:cooking) %>
+        <%= label_tag(:tag, "Active") %>
+        <%= tag_field.check_box(:active) %>
+        <%= label_tag(:tag, "Architecture") %>
+        <%= tag_field.check_box(:architecture) %>
         <%= label_tag(:tag, "Art") %>
         <%= tag_field.check_box(:art) %>
+        <%= label_tag(:tag, "Cooking") %>
+        <%= tag_field.check_box(:cooking) %>
+        <%= label_tag(:tag, "Food") %>
+        <%= tag_field.check_box(:food) %>
         <%= label_tag(:tag, "Music") %>
         <%= tag_field.check_box(:music) %>
         <%= label_tag(:tag, "Outdoors") %>
         <%= tag_field.check_box(:outdoors) %>
-        <%= label_tag(:tag, "Food") %>
-        <%= tag_field.check_box(:food) %>
+        <%= label_tag(:tag, "Tour") %>
+        <%= tag_field.check_box(:tour) %>
       <% end %>
 
     <%= f.submit %>

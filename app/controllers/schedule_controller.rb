@@ -3,7 +3,7 @@ class ScheduleController < ApplicationController
 
   def index
     @activity_id = params[:activity_id]
-    @instructor_id = Activity.where(id: @activity_id).pluck(:instructor_id)
+    @instructor_id = Activity.where(id: @activity_id).pluck(:instructor_id).first
     @user_id = current_user.id
 
     current_user.is_customer = true
